@@ -1,12 +1,12 @@
 const axios = require ('axios');
-const {Country} = require ('../models/Country');
+const {Country} = require ('../db');
 
 const allInfoNecCountries = async ( ) => {
     try {
-      const pedidoApi = await axios("https://restcountries.com/v3/all") //traigo toda la info
-      const dataApi = await pedidoApi.data //saco la data es un array de objetos
-
-      const dataNecRpAndRd = dataApi?.map (d => {         // retorna un array de objetos
+      const pedidoApi = await axios("https://restcountries.com/v3/all") 
+      const dataApi = await pedidoApi.data 
+      
+      const dataNecRpAndRd = dataApi?.map (d => {       
               return {
                   id: d.cca3,
                   name: d.name.common,
@@ -17,11 +17,28 @@ const allInfoNecCountries = async ( ) => {
                   area: d.area,
                   population: d.population
               }
-            })
-            await Country.bulkCreate(dataNecRpAndRd)
-        //   return dataNecRpAndRd       
-
-    }catch (error) {
+            });
+            
+            dataNecRpAndRd.map(el => {
+                Country.findOrCreate({
+                    where: { 
+                        id: el.id,
+                        name: el.name,
+                        flags: el.flags,
+                        region: el.region,
+                        capital: el.capital,
+                        subregion: el.subregion,
+                        area: el.area,
+                        population: el.population
+                    },
+                })
+            }); 
+            const searchInDb = await Country.findAll()
+            
+            // console.log(searchInDb)
+            return searchInDb;
+   
+        }catch (error) {
         console.log ('No anda allInfoNecCountries')
     };
 }

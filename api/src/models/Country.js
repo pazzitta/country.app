@@ -15,7 +15,8 @@ module.exports = (sequelize) => {
     },
     flags : {
       type:  DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fsierrablancophoto.com%2Findianizebdff%2Fefaece137172.php&psig=AOvVaw3pDlPJ_akN7RuJfFbB8Pyu&ust=1649804123852000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCPjHx7qNjfcCFQAAAAAdAAAAABAJ'
     },
     region: {
       type: DataTypes.STRING,
@@ -35,5 +36,5 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER
     },  
   }, 
-  { timestrams : false } 
+  { timestamps: false }
   );};
