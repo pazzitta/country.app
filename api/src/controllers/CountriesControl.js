@@ -1,7 +1,7 @@
-const axios = require ('axios');
 const {allInfoNecCountries} = require ('./DataCountries')
 const {Country, Activity} = require ('../db')
 
+//ANDA TODO, REVISAR TEORÍA!
 const getAllAndByName = async (req, res, next) => {     //en esta... tengo que incluir actividades y población para los filtros aunque no se muetren en las cards?
     try {
        const {name} = req.query 
@@ -46,7 +46,7 @@ const getOneById = async (req, res, next) => {
                     }
                 }
             })
-            console.log(busqueda)
+            // console.log(busqueda)
             res.send(busqueda);
 
         }
