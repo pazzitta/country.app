@@ -13,6 +13,7 @@ import CardsAndPag from '../CardsAndPaginated/Cards/cards';
 export default function HomePage () {
     return (
     <div>
+        <div>Soy la home page</div>
         <BarraRutas/>
         <SearchBar/>
         <Selects/>

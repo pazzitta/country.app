@@ -1,5 +1,5 @@
 import React from "react";
-import './cardsAndPaginated.css'
+// import './cardsAndPaginated.css'
 
 
 

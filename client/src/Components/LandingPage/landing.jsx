@@ -5,7 +5,7 @@ import './landing.css';
 export default function LandingPage () {
   return ( 
     <div>
-        
+        <div>Soy la landing page</div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import {Route} from 'react-router-dom';
 import './App.css';
 import LandingPage  from './Components/LandingPage/landing';
 import HomePage from './Components/Home/home';
@@ -7,7 +8,10 @@ import NewActivity from './Components/Create/newActivity';
 function App() {
   return (
     <div className="App">
-      <h1>Henry Countries</h1>
+      <Route exact path='/' component={LandingPage} />
+      <Route path='/home' component={HomePage} />
+      <Route path='/detail' component={DetailCountry} />
+      <Route path= '/create' component={NewActivity} />
     </div>
   );
 }
