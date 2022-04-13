@@ -1,0 +1,25 @@
+.botonHomeD {
+ position: relative;
+ background-image: url('../../../public/imagenes/Pagina/boton.home.png');
+ background-repeat:no-repeat;
+ background-color: transparent;
+ height: 23vh;
+ width: 9vw;
+ background-size: cover;
+ background-position:center;
+ border: none;
+ bottom: 50vh;
+ left: 15vw;
+}
+.boxForm {
+    position: relative;
+    background-image: url('../../../public/imagenes/Pagina/fondoForm.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 60vw;
+    top: 20vh;
+    left: 18vw;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-// import './cardsAndPaginated.css'
+import '../Cards/cardsAndPaginated.css';
 
 //aca viene props pero aún no sé como hago el paginado
 
