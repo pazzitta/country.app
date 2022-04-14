@@ -1,3 +1,4 @@
+
 .botonHomeD {
  position: relative;
  background-image: url('../../../public/imagenes/Pagina/boton.home.png');
@@ -10,7 +11,24 @@
  border: none;
  bottom: 50vh;
  left: 15vw;
+ cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
 }
+
+.botonCreateD {
+    position: relative;
+    background-image: url('../../../public/imagenes/Pagina/create.png');
+    background-repeat:no-repeat;
+    background-color: transparent;
+    height: 10vh;
+    width: 8vw;
+    background-size: cover;
+    background-position:center;
+    border: none;
+    top: 42vh;
+    left: 23vw;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer1.png"),pointer;
+}
+
 .boxForm {
     position: relative;
     background-image: url('../../../public/imagenes/Pagina/fondoForm.png');
@@ -22,4 +40,111 @@
     width: 60vw;
     top: 20vh;
     left: 18vw;
+}
+
+/* Nombre */
+.nombreForm {
+    position: relative;
+    top: 21.4vh;
+    left: 4.7vw;
+    width: 150px;
+    height: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+}
+
+/* Duración */
+.duracionForm {
+   position: relative;
+   top: 50.4vh;
+   right: 13.49vw;
+   width: 210px;
+   height: 30px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   background-color: rgb(173, 171, 168);
+   border: none;
+}
+
+/* Estaciones */
+.estacionesForm {
+    position: relative;
+    top: 30vh;
+    right: 18vw;
+}
+
+.estVer {
+    position: relative;
+    bottom: 1.5vh;
+    right: 1.1vw;
+    width: 20px;
+    height: 20px;
+}
+.estOto {
+    position: relative;
+    top: 2.3vh;
+    left: 1.5vw;
+    width: 20px;
+    height: 20px;
+}
+
+.estInv {
+    position: relative;
+    bottom: 5vh;
+    left: 2.8vw;
+    width: 20px;
+    height: 20px;
+}
+
+.estPrim {
+    position: relative;
+    bottom: 1.4vh;
+    left: 5.6vw;
+    width: 20px;
+    height: 20px;
+}
+
+/* Dificultad */
+.dificultadForm{
+    position: relative;
+    top: 30vh;
+    left: 3vw;
+}
+
+.dif1Form {
+    position: relative;
+    top: 3.7vh;
+    right: 1vw;
+}
+.dif2Form {
+    position: relative;
+    top: 1vh;
+    left: 1.5vw;
+}
+.dif3Form {
+    position: relative;
+    bottom: 1.4vh;
+    right: 4vw;
+}
+.dif4Form {
+    position: relative;
+    bottom: 2.9vh;
+    left: 1.7vw;
+}
+.dif5Form {
+    position: relative;
+    bottom: 5vh;
+    right: 2.3vw;
+}
+
+/* select */
+.selectForm{
+    position: relative;
+    top: 41vh;
+    left: 11.7vw;
+    width: 120px;
+    height: 25px;
+    background-color: rgb(173, 171, 168);
+    border: none;
 }

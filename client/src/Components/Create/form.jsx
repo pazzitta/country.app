@@ -13,36 +13,38 @@ export default function Form () {
             <div >
             <form  className="boxForm">
                
-               <div className="nombreForm">
-                  <input type= "text" name="Nombre" placeholder="Nombre"/>
+               <div>
+                  <input autoComplete="off" className="nombreForm" type= "text" name="Nombre" placeholder="Nombre"/>
                </div>
-
+               {/* para desavilitar y habilitar estos hay que usas estados */}
                <div className="estacionesForm">
-                   <input type="checkbox" name ='Verano'/>
-                   <input type="checkbox" name="Otoño"/>
-                   <input type="checkbox" name= "Invierno"/>
-                   <input type="checkbox" name="Primavera"/>
+                   <input className="estVer" type="radio" name ='Verano'/>
+                   <input className="estOto" type="radio" name="Otoño"/>
+                   <input className="estInv" type="radio" name= "Invierno"/>
+                   <input className="estPrim" type="radio" name="Primavera"/>
                </div>
+               
                
                <div className="dificultadForm">
-                   <input type="checkbox" name="1"/>
-                   <input type="checkbox" name= "2"/>
-                   <input type="checkbox"name= "3"/>
-                   <input type="checkbox" name="4"/>
-                   <input type="checkbox" name="5"/>
+                   <input className="dif1Form" type="checkbox" name="1"/>
+                   <input className="dif2Form" type="checkbox" name= "2"/>
+                   <input className="dif3Form" type="checkbox"name= "3"/>
+                   <input className="dif4Form" type="checkbox" name="4"/>
+                   <input className="dif5Form" type="checkbox" name="5"/>
                </div>
                
-               <div className="duracionForm">
-                  <input type= "text" name='Duracion' placeholder="Duración de la actividad"/>
+               <div >
+                  <input className="duracionForm" autoComplete="off" type= "text" name='Duracion' placeholder="Duración de la actividad"/>
                </div>
 
                <div>
-                   <select>Selecionar paises</select>
+                   <select className="selectForm">Selecionar paises</select>
                </div>
                
-               <button>Crear</button>
+               <button type='submit' className="botonCreateD"></button>
             
             </form>
+            
             <div >
                 <Link to='/home' id='click'>
                    <button className="botonHomeD"></button>
