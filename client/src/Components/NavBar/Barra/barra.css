@@ -1,0 +1,25 @@
+.sinLinea{
+    text-decoration: none;
+}
+.boxAppventura{
+    position: relative;
+    top: 4vh;
+    left: 5vw;
+    background-color: rgb(81, 190, 229);
+    width: 90%;
+    height: 10vh;
+    border-radius: 20px;
+
+}
+
+.nameAppventura{
+    position: relative;
+    /* background-color: rgb(44, 163, 163); */
+    width: 25%;
+    height: 10vh;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 4rem; 
+}

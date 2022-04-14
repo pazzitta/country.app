@@ -1,22 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import './newActivity.css'
+import './newActivity.css';
+import { useHistory } from "react-router-dom";
 
-//importar todas las acciones y funciones de estado
+//importar todas las acciones (get/activity and allConutries) y funciones de estado
+
+export function validate (input) {
+    let errors = {};
+}
+
 
 export default function Form () {
-    return (
-        <div>
 
-            
+const [errors, setErrors] = useState ({})
+
+const [input, setInput] = useState({
+    name: '',
+    duration: '',
+    countries: [],
+    
+    // faltan difficulty, season
+
+
+})
+
+    
+    return (
+        <div>    
            
             <div >
             <form  className="boxForm">
                
                <div>
-                  <input autoComplete="off" className="nombreForm" type= "text" name="Nombre" placeholder="Nombre"/>
+                  <input autoComplete="off" className="nombreForm" type= "text" name="name" placeholder="Nombre"/>
                </div>
                {/* para desavilitar y habilitar estos hay que usas estados */}
+               {/* ¿cómo hago que estos (radio y checkbox) esten dentro de un "name" en el input y demás? ya que son solo elementos de lectura? */}
                <div className="estacionesForm">
                    <input className="estVer" type="radio" name ='Verano'/>
                    <input className="estOto" type="radio" name="Otoño"/>
@@ -34,11 +53,13 @@ export default function Form () {
                </div>
                
                <div >
-                  <input className="duracionForm" autoComplete="off" type= "text" name='Duracion' placeholder="Duración de la actividad"/>
+                  <input className="duracionForm" autoComplete="off" type= "text" name='duration' placeholder="Duración de la actividad"/>
                </div>
 
                <div>
-                   <select className="selectForm">Selecionar paises</select>
+                   <select className="selectForm">
+                      <option disabled selected>Selecionar paises</option>
+                   </select>
                </div>
                
                <button type='submit' className="botonCreateD"></button>

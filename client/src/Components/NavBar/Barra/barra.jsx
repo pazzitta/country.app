@@ -4,8 +4,10 @@ import './barra.css'
 
 export default function BarraRutas () {
     return (
-    <div>
-        
+    <div className="boxAppventura">
+       <Link to='/home' id="click" className="sinLinea">
+          <div className="nameAppventura">Appventura</div>
+       </Link>             
     </div>
     );
 }
