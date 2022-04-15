@@ -6,8 +6,10 @@ import './landing.css';
 
 export default function LandingPage () {
   return ( 
-    <div>
-        <div>Soy la landing page</div>
+    <div className="landingCoun">
+        <Link to= '/home' id='click'>
+        <button className="botonHomeLP"></button>
+        </Link>
     </div>
   );
 }
