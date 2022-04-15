@@ -3,6 +3,7 @@ import Card from "./card";
 import Paginated from "../Paginated/paginated";
 import './cardsAndPaginated.css';
  //todas las acciones y funciones de estados correspondientes
+import {getAllCountry} from '../../../Redux/actions'; //despues ver si necesito las activities... 
 
 export default function CardsAndPag () {
     return (

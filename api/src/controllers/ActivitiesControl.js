@@ -25,6 +25,18 @@ const createActivity = async( req, res) => {
  }
 }
 
+//anda!
+const getAllActivities = async (req, res) => {
+  try {
+    const activities = await Activity.findAll()
+    res.send (activities)
+
+  }catch (error) {
+    console.log('no anda el getAllActivities')
+  }
+}
+
 module.exports = {
-    createActivity
+    createActivity,
+    getAllActivities
 }

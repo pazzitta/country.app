@@ -2,6 +2,8 @@ import React from "react";
 import './countryAndActivity.css';
 import CardsActivity from "./cardsActivity";
 
+import {getAllDetail, getActivities} from '../../Redux/actions'
+
 //aca se asocia todo el detalle completo ---conutries y activities (tengo que ver como uno la ruta de datalles y saco las card de casa actividad)
 
 export default function BodyDetail () {
