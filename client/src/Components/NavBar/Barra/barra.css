@@ -1,6 +1,11 @@
 .sinLinea{
     text-decoration: none;
 }
+/* .boxLink {
+    position: relative;
+    width: 25%;
+    height: 10vh;
+} */
 .boxAppventura{
     position: relative;
     top: 4vh;
@@ -14,7 +19,7 @@
 
 .nameAppventura{
     position: relative;
-    /* background-color: rgb(44, 163, 163); */
+    background-color: rgb(44, 163, 163);
     width: 25%;
     height: 10vh;
     border-radius: 20px;

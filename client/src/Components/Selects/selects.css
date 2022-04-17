@@ -1,0 +1,80 @@
+.ordenTodos {
+    position: relative;
+    /* background-color: blueviolet; */
+    top: 20vh;
+    left: 5%;
+    width: 90%;
+}
+
+.selectAct {
+    position: relative;
+    right: 15%;
+    background-color: rgb(22 ,22 , 84);
+    border: none;
+    border-radius: 1vh;
+    width: 13vw;
+    height: 5vh;
+    color: rgb(255, 255, 255);
+    font-style: trebuchet;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}
+
+.selectCont {
+    position: relative;
+    right: 10%;
+    background-color: rgb(22 ,22 , 84);
+    border: none;
+    border-radius: 1vh;
+    width: 13vw;
+    height: 5vh;
+    color: rgb(255, 255, 255);
+    font-style: trebuchet;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}
+
+.selectAlfab {
+    position: relative;
+    left: 7%;
+    background-color: rgb(22 ,22 , 84);
+    border: none;
+    border-radius: 1vh;
+    width: 13vw;
+    height: 5vh;
+    color: rgb(255, 255, 255);
+    font-style: trebuchet;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}
+
+.selectPobl {
+    position: relative;
+    left: 12%;
+    background-color: rgb(22 ,22 , 84);
+    border: none;
+    border-radius: 1vh;
+    width: 13vw;
+    height: 5vh;
+    color: rgb(255, 255, 255);
+    font-style: trebuchet;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}
+
+.botonReset {
+    position: relative;
+    top: 0;
+    left: 29%;
+    background-color: rgb(22 ,22 , 84);
+    border: none;
+    border-radius: 1vh;
+    width: 3vw;
+    height: 5vh;
+    color: rgb(255, 255, 255); 
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}

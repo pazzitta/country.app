@@ -17,7 +17,14 @@
     background-size: cover;
     background-position:center;
     border: none;
-    top: 75vh;
-    left: 15.5vw;
+    bottom: 25vh;
+    left: 16vw;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
    }
+
+.videoLanding {
+    position: relative;
+    background-color: black;
+    height: 950px;
+    
+}   

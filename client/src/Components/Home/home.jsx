@@ -13,10 +13,9 @@ import CardsAndPag from '../CardsAndPaginated/Cards/cards';
 export default function HomePage () {
     return (
     <div>
-        <div>Soy la home page</div>
+        <Selects/>
         <BarraRutas/>
         <SearchBar/>
-        <Selects/>
         <CardsAndPag/>
     </div>
     );
