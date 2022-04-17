@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import {Link} from "react-router-dom";
 import Card from "./card";
 import Paginated from "../Paginated/paginated";
 import './cardsAndPaginated.css';
@@ -19,10 +20,15 @@ useEffect (()=> {
 })
 
     return (
-        <div>
+        <div className="ordenCards">
         {estadoGlobalCountry.map (info => {
             return (
-                <Card name={info.name} id={info.id} region={info.region} flags={info.flags}/> 
+                <div key={info.id}>
+                   <Link to= {'/detail/' + info.id} className= "sinlineaCountCards" >
+                       <Card name={info.name} id={info.id} region={info.region} flags={info.flags}/> 
+                   </Link>                    
+
+                </div>
             )})
         }
 

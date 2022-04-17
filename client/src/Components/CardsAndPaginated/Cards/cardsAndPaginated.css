@@ -3,7 +3,7 @@
 .boxCardCoun {
     position: relative;
     bottom: 0vh;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(248, 248, 248);
     box-shadow : 4px 3px 3px rgba(22, 22, 84, 0.40);
     height: 35vh;
     width: 15vw;
@@ -66,4 +66,19 @@
     font-weight: 600;
     font-size: 1.5em;
     line-height : 30px;  
+}
+
+/* CARDS */
+.ordenCards {
+    /* background-color: rgb(139, 67, 67); */
+    width: 90%;
+    margin-left: 4vw;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px 80px;
+    /* grid-template-rows: 50px 100px 40px 60px; */
+}
+
+.sinlineaCountCards {
+    text-decoration: none;
 }
