@@ -1,0 +1,37 @@
+.posicion {
+    position: relative;
+    bottom: 95px;
+    left: 1370px;
+    /* background-color: blueviolet; */
+    width: 400px;
+    height: 95px;
+}
+
+.searchName {
+    position: relative;
+    right: 20px;
+    top: 20px;
+    width: 16vw;
+    height: 5.6vh;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border: none;
+    font-style: trebuchet;
+    font-weight: 600;
+    font-size: 1rem; 
+}
+
+.botonAvion {
+    position: relative;
+    left: 160px;
+    bottom: 37px;
+    background-image: url("../../../../public/imagenes/Pagina/boton.search.png");
+    background-repeat:no-repeat;
+    background-color: transparent;
+    background-size: cover;
+    background-position:center;
+    border: none;
+    width: 5vw;
+    height: 7vh;
+    cursor: url("../../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
+}

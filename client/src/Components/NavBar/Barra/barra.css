@@ -8,7 +8,7 @@
 } */
 .boxAppventura{
     position: relative;
-    top: 4vh;
+    top: 0;
     left: 5vw;
     background-color: rgb(81, 190, 229);
     width: 90%;
@@ -19,7 +19,7 @@
 
 .nameAppventura{
     position: relative;
-    background-color: rgb(44, 163, 163);
+    /* background-color: rgb(44, 163, 163); */
     width: 25%;
     height: 10vh;
     border-radius: 20px;

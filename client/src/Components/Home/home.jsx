@@ -16,6 +16,7 @@ export default function HomePage () {
         <Selects/>
         <BarraRutas/>
         <SearchBar/>
+        
         <CardsAndPag/>
     </div>
     );

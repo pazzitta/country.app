@@ -5,6 +5,7 @@ import './selects.css';
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA, 
     orderByPopulationAsc, orderByPopulationDes} from '../../Redux/actions'
 
+// arreglar la posición de los selects, están levemente descentrados
 export default function Selects () {
     return (
     
