@@ -17,7 +17,7 @@ const dispatch = useDispatch ();
 
 useEffect (()=> {
     dispatch(getAllCountry())
-})
+}, [dispatch])
 
     return (
         <div className="ordenCards">

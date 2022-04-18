@@ -1,29 +1,66 @@
 const {allInfoNecCountries} = require ('./DataCountries')
 const {Country, Activity} = require ('../db')
+const { Op } = require('sequelize')
 
-//ANDA TODO, REVISAR TEORÍA!
-const getAllAndByName = async (req, res, next) => {     //en esta... tengo que incluir actividades y población para los filtros aunque no se muetren en las cards?
+//ANDA TODO, pero no inclute solo la info de la rura principal...ver como hacer luego, cuando ande todo
+const getAllAndByName = async (req, res, next) => {     
+    const {name} = req.query 
     try {
-      const allInfo = await allInfoNecCountries (); 
-       const {name} = req.query 
+        const num_country= await Country.count()
+        if(!num_country){
+            await allInfoNecCountries()
+        }
+    
+        if(!name){
+            const searchInDb = await Country.findAll({ include: {
+                model: Activity,
+                attributes: {
+                    include: ["name", "id"]
+                },
+                through: {
+                    attributes: []
+                }
+            }
+        });
+           return res.send (searchInDb)
+        } else {
+            let database = await Country.findAll({
+                where: {
+                    name: { 
+                        [Op.iLike]: `${name}%`}
+                },
+                include: {
+                    model: Activity,
+                    attributes: ["name"],
+                    through: {
+                        attributes: []
+                    }
+                }
+            })
+           return res.send (database)
+        }
+        
+    //    console.log(searchInDb)
+        
+       
 
-       const infoRp = await allInfo.map(e => {
-           return {
-            id: e.id,
-            name: e.name,
-            flags: e.flags,
-            region: e.region
-           }
-       })
+    //    const infoRp = await allInfo.map(e => {
+    //        return {
+    //         id: e.id,
+    //         name: e.name,
+    //         flags: e.flags,
+    //         region: e.region
+    //        }
+    //    })
 
-       if (name){
-           let filterName = await infoRp.filter (n => n.name.toLowerCase().includes(name.toString().toLowerCase())) // esto es fijate si el nombre que tenemos coincide en algun punto con el que recibo por query
-           filterName.length > 0?
-           res.send (filterName):
-           res.send ('No se ha encontrado el país, intentelo nuevamente')
-       } else {
-           res.send(infoRp)
-       } 
+    //    if (name){
+    //        let filterName = await infoRp.filter (n => n.name.toLowerCase().includes(name.toString().toLowerCase())) // esto es fijate si el nombre que tenemos coincide en algun punto con el que recibo por query
+    //        filterName.length > 0?
+    //        res.send (filterName):
+    //        res.send ('No se ha encontrado el país, intentelo nuevamente')
+    //    } else {
+    //        res.send(infoRp)
+    //    } 
 
     }catch (error) {
         next (error)

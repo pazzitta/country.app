@@ -49,8 +49,6 @@ const {Country, Activity} = require ('../db');
 
 const allInfoNecCountries = async ( ) => {
     try {
-       
-   
         const pedidoApi = await axios("https://restcountries.com/v3/all") 
         const dataApi = await pedidoApi.data 
         
@@ -67,10 +65,10 @@ const allInfoNecCountries = async ( ) => {
                 }
               });
         
-        await Country.bulkCreate(dataNecRpAndRd)     
-        const searchInDb = await Country.findAll();
-    //    console.log(searchInDb)
-        return searchInDb;
+     await Country.bulkCreate(dataNecRpAndRd)     
+    // //     const searchInDb = await Country.findAll();
+        // console.log(dataNecRpAndRd)
+        return dataNecRpAndRd;
    
         }catch (error) {
         console.log ('No anda allInfoNecCountries')

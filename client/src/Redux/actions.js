@@ -19,7 +19,8 @@ const RUTA_POST_ACTIVITY = 'http://localhost:3001/activities/create'
 export const getAllCountry = () => async dispatch => {
     return await fetch(RUTA_GET_COUNTRY)
        .then(respose => respose.json())
-       .then (json => dispatch ({type:GET_ALL_COUNTRIES, payload: json}))       
+       .then (json => dispatch ({type:GET_ALL_COUNTRIES, payload: json}))
+       .catch(e=> console.log(e))       
 }
 
 export const searchByName = (payload) => async dispatch => {
