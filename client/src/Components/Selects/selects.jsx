@@ -1,12 +1,34 @@
 import React from "react";
 import './selects.css';
-
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 //todas las acciónes y los componenetes de estados
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA, 
-    orderByPopulationAsc, orderByPopulationDes} from '../../Redux/actions'
+    orderByPopulationMin, orderByPopulationMax} from '../../Redux/actions'
 
 // arreglar la posición de los selects, están levemente descentrados
 export default function Selects () {
+
+const dispatch = useDispatch();
+
+const [page, setPage] = useState (1);
+const [orden, setOrden] = useState ('');
+
+function handleSortPopulation(e){
+    if(e.target.value === "Min"){
+        e.preventDefault ();
+        dispatch (orderByPopulationMin(e.target.value));
+        setPage (1);
+        setOrden (`Ordenado ${e.target.value}`)
+    }else if(e.target.value === "Max"){
+        e.preventDefault ();
+        dispatch (orderByPopulationMax(e.target.value));
+        setPage (1);
+        setOrden (`Ordenado ${e.target.value}`)
+    }else{
+           
+     }
+    }
     return (
     
     <div className="ordenTodos">
@@ -33,10 +55,10 @@ export default function Selects () {
           <option>Z-A</option>
        </select>
 
-       <select className="selectPobl">
-           <option>Ordenar por población</option>
-           <option>Min-Max</option>
-           <option>Max-Min</option>
+       <select onChange={(e)=>handleSortPopulation(e)} className="selectPobl">
+           <option value="AllP">Ordenar por población</option>
+           <option value="Min" >Min-Max</option>
+           <option value="Max" >Max-Min</option>
        </select>
 
    

@@ -4,8 +4,8 @@ export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
 export const FILTER_BY_REGION = 'FILTER_BY_REGION ';
 export const ORDER_BY_NAME_AZ = 'ORDER_BY_NAME_AZ';
 export const ORDER_BY_NAME_ZA = 'ORDER_BY_NAME_ZA ';
-export const ORDER_BY_POPULATION_ASC = 'ORDER_BY_POPULATION_ASC ';
-export const ORDER_BY_POPULATION_DES = 'ORDER_BY_POPULATION_DES';
+export const ORDER_BY_POPULATION_MIN = 'ORDER_BY_POPULATION_ASC ';
+export const ORDER_BY_POPULATION_MAX = 'ORDER_BY_POPULATION_DES';
 export const GET_ALL_DETAIL = 'GET_ALL_DETAIL';
 export const GET_ACTITIVIIES = 'GET_ACTITIVIIES'; //me cree un ruta que las trae
 export const POST_ACTIVITY = 'POST_ACTIVITY'
@@ -65,16 +65,17 @@ export const orderByNameZA = (payload) => {
     }
 }
 
-export const orderByPopulationAsc = (payload) => {
+export const orderByPopulationMin = (payload) => {
+    console.log(payload)
     return {
-        type: ORDER_BY_POPULATION_ASC,
+        type: ORDER_BY_POPULATION_MIN,
         payload
     }
 }
 
-export const orderByPopulationDes = (payload) => {
+export const orderByPopulationMax = (payload) => {
     return {
-        type: ORDER_BY_POPULATION_DES,
+        type: ORDER_BY_POPULATION_MAX,
         payload
     }
 }
