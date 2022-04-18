@@ -4,9 +4,10 @@ const {Country, Activity} = require ('../db')
 //ANDA TODO, REVISAR TEORÍA!
 const getAllAndByName = async (req, res, next) => {     //en esta... tengo que incluir actividades y población para los filtros aunque no se muetren en las cards?
     try {
+      const allInfo = await allInfoNecCountries (); 
        const {name} = req.query 
-       const allInfo = await allInfoNecCountries (); 
-       const infoRp = await allInfo.map (e => {
+
+       const infoRp = await allInfo.map(e => {
            return {
             id: e.id,
             name: e.name,
@@ -16,7 +17,7 @@ const getAllAndByName = async (req, res, next) => {     //en esta... tengo que i
        })
 
        if (name){
-           let filterName = infoRp.filter (n => n.name.toLowerCase().includes(name.toString().toLowerCase())) // esto es fijate si el nombre que tenemos coincide en algun punto con el que recibo por query
+           let filterName = await infoRp.filter (n => n.name.toLowerCase().includes(name.toString().toLowerCase())) // esto es fijate si el nombre que tenemos coincide en algun punto con el que recibo por query
            filterName.length > 0?
            res.send (filterName):
            res.send ('No se ha encontrado el país, intentelo nuevamente')

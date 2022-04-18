@@ -23,9 +23,10 @@ export const getAllCountry = () => async dispatch => {
 }
 
 export const searchByName = (payload) => async dispatch => {
-    return await fetch( `RUTA_GET_COUNTRY7/?name=${payload}`)
+    return await fetch( `${RUTA_GET_COUNTRY}/?name=${payload}`)
     .then(respose => respose.json())
     .then(json => dispatch({type: SEARCH_BY_NAME, payload: json}))
+    .catch(() => alert ('No se encontró el país buscado, intentelo nuevamente') )
 }
 // SELECT: getActivities,filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA, orderByPopulationAsc, orderByPopulationDes.
 
