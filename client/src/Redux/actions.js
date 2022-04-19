@@ -96,7 +96,8 @@ export const getAllDetail = (payload) => async dispatch => {
 //      .then (respose => respose.json())
 //      .then (json => dispatch ({type:POST_ACTIVITY, payload:json}))
 //  }
- export function postActivity(payload) { 
+ export function postActivity(payload) {
+     console.log(payload) 
     return async function() {
             var response = await axios.post(RUTA_POST_ACTIVITY, payload);
             console.log(response)
