@@ -1,3 +1,4 @@
+import axios from 'axios';
 export const GET_ALL_COUNTRIES = 'GET_ALL_COUNTRIES';
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';
 export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
@@ -90,8 +91,15 @@ export const getAllDetail = (payload) => async dispatch => {
 // Actions ruta Create : postActivity 
  //FALTA VER COMO HACERLO CON FETCH
 
- export const postActivity = (payload) => async dispatch =>{
-     return await fetch (RUTA_POST_ACTIVITY, {method:'POST', body: payload} )
-     .then (respose => respose.json())
-     .then (json => dispatch ({type:POST_ACTIVITY, payload:json}))
+//  export const postActivity = (payload) => async dispatch =>{
+//      return await fetch (RUTA_POST_ACTIVITY, {method:'POST', body: payload} )
+//      .then (respose => respose.json())
+//      .then (json => dispatch ({type:POST_ACTIVITY, payload:json}))
+//  }
+ export function postActivity(payload) { 
+    return async function() {
+            var response = await axios.post(RUTA_POST_ACTIVITY, payload);
+            console.log(response)
+            return response;
+    }
  }

@@ -39,29 +39,6 @@ const getAllAndByName = async (req, res, next) => {
             })
            return res.send (database)
         }
-        
-    //    console.log(searchInDb)
-        
-       
-
-    //    const infoRp = await allInfo.map(e => {
-    //        return {
-    //         id: e.id,
-    //         name: e.name,
-    //         flags: e.flags,
-    //         region: e.region
-    //        }
-    //    })
-
-    //    if (name){
-    //        let filterName = await infoRp.filter (n => n.name.toLowerCase().includes(name.toString().toLowerCase())) // esto es fijate si el nombre que tenemos coincide en algun punto con el que recibo por query
-    //        filterName.length > 0?
-    //        res.send (filterName):
-    //        res.send ('No se ha encontrado el país, intentelo nuevamente')
-    //    } else {
-    //        res.send(infoRp)
-    //    } 
-
     }catch (error) {
         next (error)
     }

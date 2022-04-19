@@ -27,7 +27,7 @@ const [input, setInput] = useState({
 })
 
 function handleChange(e) {
-    e.preventDefault()
+    // e.preventDefault()
     setInput ({
        ...input,
       [e.target.name]: e.target.value
@@ -64,18 +64,18 @@ useEffect(() => {
                {/* ¿cómo hago que estos (radio y checkbox) esten dentro de un "name" en el input y demás? ya que son solo elementos de lectura? */}
                <div className="estacionesForm">
                    <input onClick={handleChange}  className="estVer" type="radio" name= "season" value ='Verano'/>
-                   <input onClick={handleChange}  className="estOto" type="radio" name= "season" value="Otoño"/>
+                   <input onClick={handleChange}  className="estOto" type="radio" name= "season" value="Otonio"/>
                    <input onClick={handleChange}  className="estInv" type="radio" name= "season" value= "Invierno"/>
                    <input onClick={handleChange}  className="estPrim" type="radio" name= "season" value="Primavera"/>
                </div>
                
                
                <div className="dificultadForm">
-                   <input onClick={handleChange} className="dif1Form" type="checkbox" name="difficulty" value="1"/>
-                   <input onClick={handleChange}  className="dif2Form" type="checkbox" name= "difficulty" value="2"/>
-                   <input onClick={handleChange}  className="dif3Form" type="checkbox"name= "difficulty" value="3"/>
-                   <input onClick={handleChange}  className="dif4Form" type="checkbox" name="ddifficulty" value= "4"/>
-                   <input onClick={handleChange}  className="dif5Form" type="checkbox" name="difficulty" value= "5"/>
+                   <input onClick={(e)=>handleChange(e)} key= "1" className="dif1Form" type="radio" name="difficulty" value="1" />
+                   <input onClick={handleChange}  className="dif2Form" type="radio" name= "difficulty" value="2"/>
+                   <input onClick={handleChange}  className="dif3Form" type="radio"name= "difficulty" value="3"/>
+                   <input onClick={handleChange}  className="dif4Form" type="radio" name="ddifficulty" value= "4"/>
+                   <input onClick={handleChange}  className="dif5Form" type="radio" name="difficulty" value= "5"/>
                </div>
                
                <div >

@@ -27,7 +27,6 @@ useEffect (()=> {
                    <Link to= {'/detail/' + info.id} className= "sinlineaCountCards" >
                        <Card name={info.name} id={info.id} region={info.region} flags={info.flags}/> 
                    </Link>                    
-
                 </div>
             )})
         }
