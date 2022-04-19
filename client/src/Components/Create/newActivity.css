@@ -24,7 +24,7 @@
     background-size: cover;
     background-position:center;
     border: none;
-    top: 42vh;
+    top: 37vh;
     left: 23vw;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer1.png"),pointer;
 }
@@ -151,4 +151,10 @@
     font-style: Trebuchet;
     font-weight: 500;
     font-size: 0.7rem; 
+}
+
+/* POSICIÓN BARRA */
+.barraPoscCrea {
+    position: relative;
+    top: 50px
 }

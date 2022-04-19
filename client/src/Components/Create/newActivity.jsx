@@ -7,7 +7,9 @@ import Form from "./form";
 export default function NewActivity (){
     return (
         <div>
-            <BarraRutas/>
+            <div className="barraPoscCrea">
+               <BarraRutas/>
+            </div>
             <Form/>
         </div>
     )

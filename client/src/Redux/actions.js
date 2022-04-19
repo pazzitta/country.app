@@ -6,6 +6,7 @@ export const ORDER_BY_NAME_AZ = 'ORDER_BY_NAME_AZ';
 export const ORDER_BY_NAME_ZA = 'ORDER_BY_NAME_ZA ';
 export const ORDER_BY_POPULATION_MIN = 'ORDER_BY_POPULATION_ASC ';
 export const ORDER_BY_POPULATION_MAX = 'ORDER_BY_POPULATION_DES';
+export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
 export const GET_ALL_DETAIL = 'GET_ALL_DETAIL';
 export const GET_ACTITIVIIES = 'GET_ACTITIVIIES'; //me cree un ruta que las trae
 export const POST_ACTIVITY = 'POST_ACTIVITY'
@@ -88,3 +89,9 @@ export const getAllDetail = (payload) => async dispatch => {
 }
 // Actions ruta Create : postActivity 
  //FALTA VER COMO HACERLO CON FETCH
+
+ export const postActivity = (payload) => async dispatch =>{
+     return await fetch (RUTA_POST_ACTIVITY, {method:'POST', body: payload} )
+     .then (respose => respose.json())
+     .then (json => dispatch ({type:POST_ACTIVITY, payload:json}))
+ }

@@ -1,9 +1,10 @@
 import { GET_ALL_COUNTRIES, SEARCH_BY_NAME, FILTER_BY_ACTIVITY, FILTER_BY_REGION, ORDER_BY_NAME_AZ, ORDER_BY_NAME_ZA, ORDER_BY_POPULATION_MIN,
-ORDER_BY_POPULATION_MAX, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY} from './actions' 
+ORDER_BY_POPULATION_MAX, ORDER_BY_POPULATION, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY} from './actions' 
 
 const initialState = {
    countries : [],
    allCountries : [],
+   activities: [],
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -19,6 +20,37 @@ const rootReducer = (state=initialState, action) => {
                 ...state,
                 countries: action.payload
             };
+        case POST_ACTIVITY:
+            return {
+                ...state,
+                activities: action.payload
+            }
+        case GET_ACTITIVIIES:
+            return{
+                ...state,
+                activities: action.payload
+            }
+        case ORDER_BY_NAME_AZ:
+                // let sortRace = state.races 
+        let resultsAZ = state.allCountries.sort(function(a, b){
+                    if (a.name > b.name) return 1;
+                    if (a.name < b.name) return -1;
+                    return 0;
+            });
+            return {
+                ...state,
+                countries: resultsAZ
+            };
+        case ORDER_BY_NAME_ZA:
+                let resultsZA = state.allCountries.sort(function(a, b){
+                    if (a.name > b.name) return -1;
+                    if (a.name < b.name) return 1;
+                    return 0;
+                });
+                return {
+                    ...state,
+                    countries: resultsZA
+                };    
         case ORDER_BY_POPULATION_MIN:
         let sortPopMin = state.allCountries.sort((a,b)=> a.population - b.population)
         console.log (sortPopMin)    
@@ -27,12 +59,12 @@ const rootReducer = (state=initialState, action) => {
                 countries: sortPopMin
             }; 
         case ORDER_BY_POPULATION_MAX:
-                let sortPopMax = state.allCountries.sort((a,b)=> b.population - a.population) 
-                console.log(sortPopMax)   
-                    return{
-                        ...state,
-                        countries: sortPopMax
-                    }  
+        let sortPopMax = state.allCountries.sort((a,b)=> b.population - a.population) 
+        console.log(sortPopMax)   
+            return{
+                ...state,
+                countries: sortPopMax
+         };
             default: return {...state}
 
     }
