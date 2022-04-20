@@ -5,6 +5,7 @@ const initialState = {
    countries : [],
    allCountries : [],
    activities: [],
+   countDetail: [],
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -15,6 +16,11 @@ const rootReducer = (state=initialState, action) => {
                 countries: action.payload,
                 allCountries: action.payload
             };
+        case GET_ALL_DETAIL:
+            return{
+                ...state,
+                countDetail: action.payload
+            }
         case SEARCH_BY_NAME:
             return {
                 ...state,

@@ -1,0 +1,61 @@
+.botonHomeDet{ 
+  position: relative;
+  background-image: url('../../../public/imagenes/Pagina/boton.home.png');
+  background-repeat:no-repeat;
+  background-color: transparent;
+  height: 22vh;
+  width: 9vw;
+ background-size: cover;
+  background-position:center;
+  border: none;
+  bottom: 65vh;
+  left: 700px;
+  cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
+}
+
+.barraEnDetail{
+    position: relative;
+    top: 50px;
+}
+
+.boxBodyDet {
+    position: relative;
+    left: 95px;
+    top: 44px;
+    background-color: rgb(121, 52, 44);
+    height: 800px;
+    width: 1700px;
+}
+
+/* ACTIVIDADES */
+
+.cajaCardsActDet{
+    position: relative;
+    left: 850px;
+    top: 100px;
+    background-color: salmon;
+    height: 600px;
+    width: 800px;
+}
+.nameActiDet{
+    position: relative;
+    top: 4px;
+    left: 240px;
+    width: 300px;
+    height: 60px;
+    /* background-color: rgb(173, 171, 168); */
+    border: none;
+    color: rgb(60, 60, 60);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 3rem; 
+}
+/* COUNTRIES */
+.cajaCountriesDet{
+    position: relative;
+    left: 50px;
+    bottom: 500px;
+    background-color: rgb(114, 116, 250);
+    height: 600px;
+    width: 800px;
+}

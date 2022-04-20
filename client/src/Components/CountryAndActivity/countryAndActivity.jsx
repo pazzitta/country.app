@@ -9,9 +9,17 @@ import {getAllDetail, getActivities} from '../../Redux/actions'
 export default function BodyDetail () {
     return (
         <div>
-            <CardsActivity/>
-            <div>solo el detalle del país</div> 
-            <button>Rosa de los vientos</button>
+            <div className="cajaCardsActDet">
+               <div className="nameActiDet">ACTIVIDADES</div>
+               <CardsActivity/>
+            </div>
+
+            <div className="cajaCountriesDet">
+               <div>solo el detalle del país</div> 
+            </div>
+            
+            
+            <button className="botonHomeDet"></button>
         </div>
     )
 }
