@@ -27,7 +27,7 @@ useEffect (()=>{
             <div className="cajaCardsActDet">
                <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
                <CardsActivity/>
-            </div>
+               </div>
 
             {detailCountry.length > 0 ?
             <div className="cajaCountriesDet">
@@ -36,7 +36,7 @@ useEffect (()=>{
                   <div className="nameCounDet">{detailCountry[0].name? detailCountry[0].name :"No se encontró nombre"} </div>
                   
                   <div className="boxImagenDet">
-                     <img className="imagTamDet" src={detailCountry[0].flags? detailCountry[0].flags : "No se encotró imagen"} />
+                     <img className="imagTamDet" src={detailCountry[0].flags? detailCountry[0].flags : "No se encotró imagen"} alt="banderas" />
                      <div className="idCounDet">{detailCountry[0].id ? detailCountry[0].id : "No se encontró id"} </div>
                   </div>
                
