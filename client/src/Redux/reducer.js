@@ -5,7 +5,7 @@ const initialState = {
    countries : [],
    allCountries : [],
    activities: [],
-   countDetail: [],
+   countDetail: {},
 }
 
 const rootReducer = (state=initialState, action) => {

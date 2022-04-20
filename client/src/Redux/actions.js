@@ -84,7 +84,8 @@ export const orderByPopulationMax = (payload) => {
 
 // Actions ruta Detail: allInfoDetail, getActivities
 export const getAllDetail = (payload) => async dispatch => {
-    return await fetch (`LOCAL_HOST/countries/${payload}`)
+    console.log (payload)
+    return await fetch (`http://localhost:3001/countries/${payload}`)
     .then (respose => respose.json())
     .then (json => dispatch ({type:GET_ALL_DETAIL, payload:json}))
 }

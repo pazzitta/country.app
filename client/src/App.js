@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Route exact path='/' component={LandingPage} />
       <Route path='/home' component={HomePage} />
-      <Route path='/detail' component={DetailCountry} />
+      <Route path='/detail/:id' component={DetailCountry} />
       <Route path= '/create' component={NewActivity} />
     </div>
   );

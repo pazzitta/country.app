@@ -45,7 +45,7 @@
     height: 60px;
     /* background-color: rgb(173, 171, 168); */
     border: none;
-    color: rgb(60, 60, 60);
+    color: rgb(62, 62, 62);
     font-style: Trebuchet;
     font-weight: 600;
     font-size: 3rem; 
@@ -85,4 +85,31 @@
     left: 30px;
     top: 110px;
 
+}
+.lineaSepDet {
+  border-top: 1px solid black;
+  height: 2px;
+  width: 480px;
+  /* max-width: 200px;
+  padding: 0; */
+  margin: 0px auto 0 auto;
+}
+
+.imagTamDet {
+    position: relative;
+    width: 180px;
+    height: 100px;
+}
+
+/* Nombre */
+.nameCounDet{
+    position: relative;
+    background-color: aquamarine;
+    left: 125px;
+    width: 500px;
+    height: 90px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 3rem; 
 }
