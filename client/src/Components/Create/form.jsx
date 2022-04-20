@@ -6,7 +6,10 @@ import { useDispatch, useSelector} from "react-redux"
 import {getAllCountry, postActivity} from '../../Redux/actions'
 
 //LAS VALIDACIONES ESTÁN BIEN SALVO 03 YA NO LO TOMA COMO 0... Y LO QUE VA DICIENDO EN EL RESTO DEL DOC...
-//FALTA PONER EL BOTÓN Y EL HANDLE PARA BORRARLO
+//ANDA, PERO CON ALGUNOS PAICES NO... VER QUE ONDA
+//NO ESTRA A LA VALIDACION DEL ELSE IF Y SI BORRO TODOS LOS QUE SELECCIONE ME LO DEJA HACER IGUAL!
+//ME GUSTARPIA QUE APAREZCA DE A UNO LOS ERRORES, SI QUEDA TIEMPO HACER ESO.
+//TENES QUE SELECCIONAR MÁS DE UN PAIS...
 export function validate (input) {
     let errors = {};
 //Nombre   
@@ -32,7 +35,7 @@ export function validate (input) {
  
  //season ... por ahora solo una. No anda el otoño!
    if (!input.season) {
-       errors.season = "Campo requerido, debe selecionar una únicamente"
+       errors.season = "Campo requerido, seleccione una estación"
     };
  
    if (!input.countries.length) errors.countries = "Debe seleccionar al menos un país"
@@ -62,7 +65,7 @@ function handleChange(e) {
        ...input,
       [e.target.name]: e.target.value
     } )
-    // console.log(input)
+    console.log(input)
     setErrors (validate ({
       ...input,
       [e.target.name]: e.target.value
@@ -79,7 +82,8 @@ function handleSelectCoun(e) {
     setErrors (validate ({
         ...input,
         [e.target.name]: e.target.value
-      }))           
+      }))
+      console.log(input)           
 }
 
 // ALGO ANDA MAL, NO ENTRA EN EL ELSE IF
@@ -98,6 +102,14 @@ function handleSubmit (e) {
        dispatch (postActivity(input))
        alert ('Has crado una nueva actividad, felicitaciones')
     }
+    console.log(input)
+}
+
+function handleDelet (e) {
+    setInput({
+        ...input,
+        countries : input.countries.filter((c, index) => index !== e)
+    } )
 }
 
 useEffect(() => {
@@ -110,26 +122,36 @@ useEffect(() => {
             <div >
             <form onSubmit={handleSubmit} className="boxForm">
                
-               <div>
+               <div className="boxNameD">
                   <input onChange= {handleChange} autoComplete="off" className="nombreForm" type= "text" name="name" 
                   placeholder="Nombre" value={input.name} />
+                 <div>
                   {errors.name && (
-                    <p>{errors.name} </p>
+                    <p className="errorNombreD">{errors.name} </p>
                   )}
+                 </div> 
                </div>
+               <br/>
                {/* para desavilitar y habilitar estos hay que usas estados */}
                {/* ¿cómo hago que estos (radio y checkbox) esten dentro de un "name" en el input y demás? ya que son solo elementos de lectura? */}
-               <div className="estacionesForm">
-                   <input onClick={handleChange}  className="estVer" type="radio" name= "season" value ='Verano'/>
-                   <input onClick={handleChange}  className="estOto" type="radio" name= "season" value="Otonio"/>
-                   <input onClick={handleChange}  className="estInv" type="radio" name= "season" value= "Invierno"/>
-                   <input onClick={handleChange}  className="estPrim" type="radio" name= "season" value="Primavera"/>
+               <div className="boxEstaciones" >
+                  <div className="estacionesForm">
+                     <input onClick={handleChange}  className="estVer" type="radio" name= "season" value ='Verano'/>
+                     <input onClick={handleChange}  className="estOto" type="radio" name= "season" value="Otonio"/>
+                     <input onClick={handleChange}  className="estInv" type="radio" name= "season" value= "Invierno"/>
+                     <input onClick={handleChange}  className="estPrim" type="radio" name= "season" value="Primavera"/>
+                  <div>
+                  {errors.season && (
+                      <p className="errorEsstacionesD">{errors.season} </p>
+                      ) }
+                  </div>
+                </div>
+
                </div>
-               {errors.season && (
-                      <p>{errors.season} </p>
-                  ) }
+               <br/>
                
                {/* ACA CREO QUE LE TENGO QUE PONER ALGO QUE DIAGA DIFICULTAD... */}
+               <div className="boxDificultadD">
                <div className="dificultadForm">
                    <input onClick={(e)=>handleChange(e)} key= "1" className="dif1Form" type="radio" name="difficulty" value="1" />
                    <input onClick={handleChange}  className="dif2Form" type="radio" name= "difficulty" value="2"/>
@@ -137,19 +159,24 @@ useEffect(() => {
                    <input onClick={handleChange}  className="dif4Form" type="radio" name="difficulty" value= "4"/>
                    <input onClick={handleChange}  className="dif5Form" type="radio" name="difficulty" value= "5"/>
                </div>
+               <div className="nameDificulatadForm">Dificultad</div>
                {errors.difficulty && (
-                      <p>{errors.difficulty} </p>
+                      <p className="errorDificultadD">{errors.difficulty} </p>
                   ) }
-               
-               <div >
+                </div>
+                <br/>
+
+               <div className="boxDuracionD" >
                   <input  onChange={handleChange} className="duracionForm" autoComplete="off" type= "text" name='duration' 
                   value= {input.duration} placeholder="Duración de la actividad en minutos"/>
+                  <div className="errorDuracionD">
                   {errors.duration && (
                       <p>{errors.duration} </p>
                   ) }
+                  </div>
                </div>
 
-               <div>
+               <div className="boxSelectD">
                    <select onChange= {handleSelectCoun} className="selectForm">
                       <option value= "" disabled selected>Selecionar paises</option>
                       {allConutriesSel && allConutriesSel.map((c) => (
@@ -158,12 +185,21 @@ useEffect(() => {
                         ) }
                    </select>
                    {errors.countries && (
-                       <p>{errors.countries}</p>
+                       <p className="errorCoutSelectD">{errors.countries}</p>
                    )}
-                    <ul className="sinitem"><li> {input.countries.map(c => c + " ,")}</li></ul>
+                {input.countries? <div>
+                {input.countries?.map((c, index) => 
+                    (<div className="listaCountSelD"  key={c}>
+                        <span>{c}</span>
+                        <button className="botonDelet" onClick={()=> handleDelet (index)}>x</button>
+                    </div> 
+                            ))}
+                </div> : null  }
                </div>
                
+               <div className="boxBotonCreateD">
                <button type='submit' className="botonCreateD"></button>
+               </div>
             
             </form>
             

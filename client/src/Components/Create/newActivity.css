@@ -14,6 +14,16 @@
  cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
 }
 
+.boxBotonCreateD {
+    position: relative;
+    bottom: 160px;
+    left: 960px;
+    background-color: rgb(43, 42, 92);
+    background-color: transparent;
+    height: 90px;
+    width: 100px; 
+}
+
 .botonCreateD {
     position: relative;
     background-image: url('../../../public/imagenes/Pagina/create.png');
@@ -24,8 +34,8 @@
     background-size: cover;
     background-position:center;
     border: none;
-    top: 37vh;
-    left: 23vw;
+    top: 0;
+    right: 20px;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer1.png"),pointer;
 }
 
@@ -43,22 +53,53 @@
 }
 
 /* Nombre */
+.boxNameD{
+    position: relative;
+    top: 182px;
+    left: 515px;
+    background-color: rgb(43, 42, 92);
+    background-color: transparent;
+    height: 90px;
+    width: 300px 
+}
 .nombreForm {
     position: relative;
-    top: 19.2vh;
-    left: 4.7vw;
+    top: 0;
+    left: 0;
     width: 150px;
     height: 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: none;
 }
+.errorNombreD {
+    position: relative;
+    left:7px;
+    bottom: 10px;
+    color: rgb(243, 243, 243);
+    background-color: aqua;
+    background-color: transparent;
+    width: 290px;
+    height: 37px;
+    line-height : 15px;
+}
+
 
 /* Duración */
+.boxDuracionD{
+    position: relative;
+    top: 30px;
+    left: 200px;
+    background-color: rgb(158, 147, 25);
+    background-color: transparent;
+    height: 70px;
+    width: 230px;
+
+}
 .duracionForm {
    position: relative;
-   top: 47.8vh;
-   right: 13.49vw;
+   bottom: 3px;
+   right: 0;
    width: 210px;
    height: 30px;
    border-top-left-radius: 10px;
@@ -67,11 +108,44 @@
    border: none;
 }
 
+.errorDuracionD {
+    position: relative;
+    left:0px;
+    bottom: 11px;
+    color: rgb(243, 243, 243);
+    background-color: aqua;
+    background-color: transparent;
+    width: 230px;
+    height: 37px;
+    line-height : 15px;  
+}
+
 /* Estaciones */
+.boxEstaciones {
+    position: relative;
+    top: 100px;
+    left: 120px;
+    background-color: rgb(175, 49, 49);
+    background-color: transparent;
+    height: 170px;
+    width: 300px;
+}
+.errorEsstacionesD {
+    position: relative;
+    left:20px;
+    top: 43px;
+    color:  rgb(243, 243, 243);
+    background-color: aqua;
+    background-color: transparent;
+    width: 150px;
+    height: 45px;
+    line-height : 15px;
+}
+
 .estacionesForm {
     position: relative;
-    top: 27.3vh;
-    right: 18vw;
+    top: 75px;
+    right: 40px;
 }
 
 .estVer {
@@ -106,21 +180,39 @@
 }
 
 /* Dificultad */
+.boxDificultadD {
+    position: relative;
+    bottom: 30px;
+    left: 450px;
+    background-color: rgb(49, 175, 101);
+    background-color: transparent;
+    height: 180px;
+    width: 300px;
+}
 .dificultadForm{
     position: relative;
-    top: 27.4vh;
-    left: 3vw;
+    top: 45px;
+    left: 28px;
+}
+.nameDificulatadForm{
+    position: relative;
+    top: 135px;
+    left: 0px;
+    color: rgb(8, 8, 8);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 1.4rem;
 }
 
 .dif1Form {
     position: relative;
     top: 3.7vh;
-    right: 1vw;
+    right: 0.8vw;
 }
 .dif2Form {
     position: relative;
     top: 1vh;
-    left: 1.5vw;
+    left: 1.7vw;
 }
 .dif3Form {
     position: relative;
@@ -137,12 +229,31 @@
     bottom: 5vh;
     right: 2.3vw;
 }
-
+.errorDificultadD {
+    position: relative;
+    left:0px;
+    top: 117px;
+    color:  rgb(243, 243, 243);
+    background-color: aqua;
+    background-color: transparent;
+    width: 290px;
+    height: 37px;
+    line-height : 15px;
+}
 /* select */
+.boxSelectD {
+    position: relative;
+    bottom: 97.9px;
+    left: 700px;
+    background-color: rgb(175, 49, 141);
+    background-color: transparent;
+    height: 70px;
+    width: 280px;  
+}
 .selectForm{
     position: relative;
-    top: 38.5vh;
-    left: 11.7vw;
+    bottom: 2px;
+    right:40px;
     width: 120px;
     height: 25px;
     background-color: rgb(173, 171, 168);
@@ -152,9 +263,46 @@
     font-weight: 500;
     font-size: 0.7rem; 
 }
+.errorCoutSelectD {
+    position: relative;
+    left:0px;
+    bottom:12px;
+    color:  rgb(243, 243, 243);
+    background-color: aqua;
+    background-color: transparent;
+    width: 200px;
+    height: 37px;
+    line-height : 15px;
+}
+.listaCountSelD {
+    position: relative;
+    left:160px;
+    bottom:150px;
+    color:  rgb(4, 4, 4);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 0.8rem; 
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    /* background-color: transparent; */
+    width: 140px;
+    height:35px;
+    line-height : 12px;
+}
+.botonDelet{
+    background-color: brown;
+    width: 17px;
+    height: 17px;
+    border: none;
+    color: white;
+}
 
 /* POSICIÓN BARRA */
 .barraPoscCrea {
     position: relative;
     top: 50px
 }
+
+/* ERRORES */
+
+
