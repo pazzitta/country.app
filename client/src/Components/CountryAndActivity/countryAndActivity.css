@@ -40,8 +40,8 @@
 .nameActiDet{
     position: relative;
     top: 4px;
-    left: 240px;
-    width: 300px;
+    left: 100px;
+    width: 600px;
     height: 60px;
     /* background-color: rgb(173, 171, 168); */
     border: none;
@@ -58,4 +58,31 @@
     background-color: rgb(114, 116, 250);
     height: 600px;
     width: 800px;
+}
+.boxPasaporteDetail{
+    position: relative;
+    top: 70px;
+    left: 25px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 70px;
+    height: 450px;
+    width: 750px;
+}
+.boxInfoCountDet{
+    position: relative;
+    left: 250px;
+    bottom:145px;
+    background-color: white;
+    width: 500px;
+    height: 300px;
+}
+
+.boxImagenDet {
+    position: relative;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    left: 30px;
+    top: 110px;
+
 }
