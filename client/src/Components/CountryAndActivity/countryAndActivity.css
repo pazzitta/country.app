@@ -51,11 +51,12 @@
     font-size: 3rem; 
 }
 /* COUNTRIES */
+
 .cajaCountriesDet{
     position: relative;
     left: 50px;
     bottom: 500px;
-    background-color: rgb(114, 116, 250);
+    /* background-color: rgb(114, 116, 250); */
     height: 600px;
     width: 800px;
 }
@@ -71,32 +72,67 @@
 .boxInfoCountDet{
     position: relative;
     left: 250px;
-    bottom:145px;
-    background-color: white;
+    bottom:200px;
+    /* background-color: white; */
     width: 500px;
     height: 300px;
 }
 
+/* lineas */
+.lineaSepDet1 {
+    position: relative;
+    border-top: 1px solid black;
+    height: 2px;
+    width: 470px;
+    bottom: 15px;
+    left: 10px;
+}
+
+.lineaSepDet2 {
+    position: relative;
+    border-top: 1px solid black;
+    height: 2px;
+    width: 470px;
+    bottom: 35px;
+    left: 10px;
+}.lineaSepDet3 {
+    position: relative;
+    border-top: 1px solid black;
+    height: 2px;
+    width: 470px;
+    bottom: 55px;
+    left: 10px;
+}.lineaSepDet4 {
+    position: relative;
+    border-top: 1px solid black;
+    height: 2px;
+    width: 470px;
+    bottom: 75px;
+    left: 10px;
+}.lineaSepDet5 {
+    position: relative;
+    border-top: 1px solid black;
+    height: 2px;
+    width: 470px;
+    bottom: 93px;
+    left: 10px;
+}
+
+/* imagen */
 .boxImagenDet {
     position: relative;
     background-color: white;
     width: 200px;
     height: 200px;
     left: 30px;
-    top: 110px;
+    top: 47px;
+    box-shadow : 3px 2px 2px rgba(62, 62, 62, 0.4);
 
-}
-.lineaSepDet {
-  border-top: 1px solid black;
-  height: 2px;
-  width: 480px;
-  /* max-width: 200px;
-  padding: 0; */
-  margin: 0px auto 0 auto;
 }
 
 .imagTamDet {
     position: relative;
+    top: 18px;
     width: 180px;
     height: 100px;
 }
@@ -104,12 +140,128 @@
 /* Nombre */
 .nameCounDet{
     position: relative;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     left: 125px;
+    top: 5px;
     width: 500px;
     height: 90px;
     color: rgb(62, 62, 62);
     font-style: Trebuchet;
     font-weight: 700;
-    font-size: 3rem; 
+    font-size: 3rem;
+    line-height : 40px; 
+}
+
+/* id */
+.idCounDet{
+    position: relative;
+    top: 35px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 2rem; 
+}
+
+/* Continente  */
+.nameContCounDet{
+  position: relative;
+  right: 165px;
+  top: 20px;
+  color: rgb(42, 42, 42);
+  font-style: Trebuchet;
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.contCounDet{
+    position: relative;
+    right: 0px;
+    bottom: 13px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+/* Subregion  */
+.nameSRCounDet{
+    position: relative;
+    right: 165px;
+    top: -2px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+  
+  .sRCounDet{
+      position: relative;
+      right: 0px;
+      bottom: 33px;
+      color: rgb(62, 62, 62);
+      font-style: Trebuchet;
+      font-weight: 600;
+      font-size: 1.5rem;
+  }
+
+/* Capital */
+.nameCapCounDet{
+    position: relative;
+    right: 187px;
+    bottom: 22px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+  
+.capCounDet{
+    position: relative;
+    right: 0px;
+    bottom: 55px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Población */
+.namePobCounDet{
+    position: relative;
+    right: 170px;
+    bottom: 40px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+  
+.pobCounDet{
+    position: relative;
+    right: 0px;
+    bottom: 72px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Área */
+.nameAreCounDet{
+    position: relative;
+    right: 200px;
+    bottom: 60px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+  
+.areCounDet{
+    position: relative;
+    right: 0px;
+    bottom: 92px;
+    color: rgb(62, 62, 62);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
