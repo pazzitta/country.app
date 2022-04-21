@@ -27,6 +27,9 @@ useEffect (()=>{
             <div className="cajaCardsActDet">
                <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
                <CardsActivity/>
+               <Link to='/create' id='click'>
+               <button className="newActCreate"></button>
+               </Link>
                </div>
 
             {detailCountry.length > 0 ?

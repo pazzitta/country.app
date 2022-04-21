@@ -22,9 +22,21 @@
     position: relative;
     left: 95px;
     top: 44px;
-    background-color: rgb(121, 52, 44);
+    /* background-color: rgb(121, 52, 44); */
     height: 800px;
     width: 1700px;
+}
+.newActCreate{
+    margin-top: 10px;
+    background-image: url('../../../public/imagenes/Pagina/boton.crear.png');
+    background-repeat:no-repeat;
+    background-color: transparent;
+    height: 12vh;
+    width: 8vw;
+    background-size: cover;
+    background-position:center;
+    border: none;
+    cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
 }
 
 /* ACTIVIDADES */
@@ -33,7 +45,7 @@
     position: relative;
     left: 850px;
     top: 100px;
-    background-color: salmon;
+    /* background-color: salmon; */
     height: 600px;
     width: 800px;
 }
@@ -264,4 +276,107 @@
     font-style: Trebuchet;
     font-weight: 600;
     font-size: 1.5rem;
+}
+.boxCardDetalle {
+    position: relative;
+    background-color: rgba(81, 190, 229, 0.2) ;
+    border-radius: 20px;
+    margin-top: 10px;
+    height: 100px;
+}
+.boxnameCardAct{
+    /* background-color: brown; */
+    width: 200px;
+    height: 100px;    
+}
+
+.nameCardAct {
+    position: relative;
+    right: 50px;
+    top: 25px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.boxDifCardAct{
+    position: relative;
+    left: 250px;
+    bottom: 90px;
+    background-color: rgb(81, 190, 229);
+    width: 140px;
+    height: 80px;
+}
+
+.difNaCardAct{
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    font-style: Trebuchet;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.difCardAct{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.8rem;  
+}
+.boxDurCardAct {
+    position: relative;
+    left: 425px;
+    bottom: 170px;
+    background-color: rgb(81, 190, 229);
+    width: 140px;
+    height: 80px; 
+}
+.boxEstCardAct{
+    position: relative;
+    left: 600px;
+    bottom: 250px;
+    background-color: rgb(81, 190, 229);
+    width: 140px;
+    height: 80px; 
+}
+.durNaCardAct{
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    font-style: Trebuchet;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+.durCardAct{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.8rem;  
+}
+.estNaCardAct{
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    color: rgb(255, 255, 255);
+    font-style: Trebuchet;
+    font-weight: 400;
+    font-size: 1.6rem; 
+}
+.estCardAct{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    color: rgb(42, 42, 42);
+    font-style: Trebuchet;
+    font-weight: 600;
+    font-size: 1.8rem; 
 }

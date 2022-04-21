@@ -7,9 +7,10 @@ import { useParams } from "react-router-dom";
 
 //importar todas las acciones y funciones de estado que necesito... para traer la info y el detalle de las actividaes
 
-export default function CardsActivity () {
+export default function CardsActivity (props) {
 
-const detailActivities = useSelector (state => state.countDetail)    
+const detailActivities = useSelector(state => state.countDetail)
+console.log(detailActivities)    
 const dispatch = useDispatch();
 const {id} = useParams();
 
@@ -18,14 +19,15 @@ useEffect (()=> {
 }, [dispatch, id])
    
 return (
-        <div key= {id}>
+        <div >
             {detailActivities[0].activities? detailActivities[0].activities.length? detailActivities[0].activities.map (ac =>(
                 <div key= {ac.id}>
                   <CardActivity name={ac.name} difficulty={ac.difficulty} duration={ac.duration} season={ac.season} />
               </div>
 
-            ) ) : <div>
-            <h1>No se encuantran actividades, ¿deseas crear una?</h1>
+            ) ) : 
+            <div>
+            <h1>No se encuentran actividades, ¿deseas crear una?</h1>
             </div> : null
             }
            
