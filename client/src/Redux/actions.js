@@ -10,9 +10,9 @@ export const ORDER_BY_POPULATION_MAX = 'ORDER_BY_POPULATION_DES';
 export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
 export const GET_ALL_DETAIL = 'GET_ALL_DETAIL';
 export const GET_ACTITIVIIES = 'GET_ACTITIVIIES'; //me cree un ruta que las trae
-export const POST_ACTIVITY = 'POST_ACTIVITY'
+export const POST_ACTIVITY = 'POST_ACTIVITY';
+export const DETAIL_VACIO ='DETAIL_VACIO' 
 
-const LOCAL_HOST = 'http://localhost:3001/'
 const RUTA_GET_ACTIVITIES = 'http://localhost:3001/activities/get'
 const RUTA_GET_COUNTRY = 'http://localhost:3001/countries/get'
 const RUTA_POST_ACTIVITY = 'http://localhost:3001/activities/create'
@@ -84,13 +84,25 @@ export const orderByPopulationMax = (payload) => {
 }
 
 // Actions ruta Detail: allInfoDetail, getActivities
-export const getAllDetail = (payload) => async dispatch => {
-    console.log (payload)
-    return await fetch (`http://localhost:3001/countries/${payload}`)
-    .then (respose => respose.json())
-    .catch(e => console.log(e))
-    .then (json => dispatch ({type:GET_ALL_DETAIL, payload:json}))
+// export const getAllDetail = (payload) => async dispatch => {
+//     console.log (payload)
+//     return await fetch (`http://localhost:3001/countries/${payload}`)
+//     .then (respose => respose.json())
+//     .then (json => dispatch ({type:GET_ALL_DETAIL, payload:json}))
+//     .catch(e => console.log(e))
     
+// }
+
+export function getAllDetail (payload) {
+    console.log(payload)
+    return async function (dispatch) {
+        try {
+            var json = await axios.get (`http://localhost:3001/countries/${payload}`);
+            return dispatch ({type: GET_ALL_DETAIL, payload: json.data})
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 // Actions ruta Create : postActivity 
  //FALTA VER COMO HACERLO CON FETCH
@@ -107,4 +119,10 @@ export const getAllDetail = (payload) => async dispatch => {
             console.log(response)
             return response;
     }
+ }
+
+ export function detailVacio () {
+     return ({
+         type:DETAIL_VACIO
+     })
  }

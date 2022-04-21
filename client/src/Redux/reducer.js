@@ -1,5 +1,5 @@
 import { GET_ALL_COUNTRIES, SEARCH_BY_NAME, FILTER_BY_ACTIVITY, FILTER_BY_REGION, ORDER_BY_NAME_AZ, ORDER_BY_NAME_ZA, ORDER_BY_POPULATION_MIN,
-ORDER_BY_POPULATION_MAX, ORDER_BY_POPULATION, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY} from './actions' 
+ORDER_BY_POPULATION_MAX, ORDER_BY_POPULATION, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY, DETAIL_VACIO} from './actions' 
 
 const initialState = {
    countries : [],
@@ -20,6 +20,11 @@ const rootReducer = (state=initialState, action) => {
             return{
                 ...state,
                 countDetail: action.payload
+            }
+        case DETAIL_VACIO:
+            return{
+                ...state,
+                countDetail: {}
             }
         case SEARCH_BY_NAME:
             return {

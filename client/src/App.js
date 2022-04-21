@@ -15,7 +15,7 @@ function App() {
         <Route exact path= "/" element={<LandingPage/>} />
         <Route path='/home' element={<HomePage/>} />
         <Route path='/detail/:id' element={<DetailCountry/>} />
-        <Route path= '/create' component={<NewActivity/>} />
+        <Route path= '/create' element={<NewActivity/>} />
       </Routes>
       </BrowserRouter>
 

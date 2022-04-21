@@ -5,7 +5,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import {getAllDetail, getActivities} from '../../Redux/actions'
+import {getAllDetail} from '../../Redux/actions'
 
 //aca se asocia todo el detalle completo ---conutries y activities (tengo que ver como uno la ruta de datalles y saco las card de casa actividad)
 // hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado... en las activities tambien!!!
@@ -27,7 +27,7 @@ useEffect (()=>{
         <div key= {id}>
             <div className="cajaCardsActDet">
                <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
-               <CardsActivity/>
+               {/* <CardsActivity/> */}
                <Link to='/create' id='click'>
                <button className="newActCreate"></button>
                </Link>

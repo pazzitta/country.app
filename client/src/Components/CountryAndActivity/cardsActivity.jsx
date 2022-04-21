@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import './countryAndActivity.css'
 import CardActivity from "./cardActivity";
-import {getActivities, getAllDetail} from '../../Redux/actions'
+import {getAllDetail} from '../../Redux/actions'
 import { useDispatch, useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
 

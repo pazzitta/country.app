@@ -1,13 +1,22 @@
 import React from "react";
 import '../Cards/cardsAndPaginated.css';
 
-//aca viene props pero aún no sé como hago el paginado
 
-export default function Paginated () {
+export default function Paginated ({cardsPorPag, estadoGlobalCountry, paginado}) {
+    const numeroDePag =[];
+    for (let i = 1; i <= Math.ceil(estadoGlobalCountry/cardsPorPag); i++) {
+        numeroDePag.push(i);
+    }
     
     return (
-        <div>
-
-        </div>
+        <nav>
+        <ul className="paginado" >
+            {numeroDePag && numeroDePag.map (number => (
+                <li className="nums" key = {number}>
+                    <a onClick={()=> paginado(number)}>{number}</a>
+                </li>
+            ))}
+        </ul>
+      </nav>
     )
 }
