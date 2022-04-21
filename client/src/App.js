@@ -1,4 +1,4 @@
-import {Route} from 'react-router-dom';
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import './App.css';
 import LandingPage  from './Components/LandingPage/landing';
 import HomePage from './Components/Home/home';
@@ -10,10 +10,16 @@ import NewActivity from './Components/Create/newActivity';
 function App() {
   return (
     <div className="App">
-      <Route exact path='/' component={LandingPage} />
-      <Route path='/home' component={HomePage} />
-      <Route path='/detail/:id' component={DetailCountry} />
-      <Route path= '/create' component={NewActivity} />
+      <BrowserRouter>
+      <Routes>
+        <Route exact path= "/" element={<LandingPage/>} />
+        <Route path='/home' element={<HomePage/>} />
+        <Route path='/detail/:id' element={<DetailCountry/>} />
+        <Route path= '/create' component={<NewActivity/>} />
+      </Routes>
+      </BrowserRouter>
+
+             
     </div>
   );
 }

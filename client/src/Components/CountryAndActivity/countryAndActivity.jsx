@@ -8,7 +8,8 @@ import { Link, useParams } from "react-router-dom";
 import {getAllDetail, getActivities} from '../../Redux/actions'
 
 //aca se asocia todo el detalle completo ---conutries y activities (tengo que ver como uno la ruta de datalles y saco las card de casa actividad)
-// hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado...
+// hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado... en las activities tambien!!!
+//setea el estado anterior... lo tengo que hacer con la acction y el reducer del detail vacío
 
 export default function BodyDetail () {
 

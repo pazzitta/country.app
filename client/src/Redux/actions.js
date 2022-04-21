@@ -25,6 +25,7 @@ export const getAllCountry = () => async dispatch => {
        .catch(e=> console.log(e))       
 }
 
+// NO ENTRA EL CATCH
 export const searchByName = (payload) => async dispatch => {
     return await fetch( `${RUTA_GET_COUNTRY}/?name=${payload}`)
     .then(respose => respose.json())
