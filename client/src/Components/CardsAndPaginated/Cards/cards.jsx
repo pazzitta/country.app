@@ -5,12 +5,9 @@ import {Link} from "react-router-dom";
 import Card from "./card";
 import Paginated from '../Paginated/paginated';
 import './cardsAndPaginated.css';
- //todas las acciones y funciones de estados correspondientes
-import {getAllCountry} from '../../../Redux/actions'; //despues ver si necesito las activities... 
+import {getAllCountry} from '../../../Redux/actions'; 
 import { detailVacio } from "../../../Redux/actions";
 
-// EN EL DETALLE APARECE LA CARD PERO SOLO CON LOS MENSAJES...
-//HACE EL PAGINADO PARO NO APARECEN LOS NUMEROS
 
 export default function CardsAndPag () {
 
@@ -27,15 +24,17 @@ const tarjetasAct = estadoGlobalCountry.slice( indiceDeCardsPrinc,indiceDeCardsF
 const paginado = (numeroDePag) => {
     setPagActual(numeroDePag)
 }
+// esto hace que como divide por 9 cuando el componente se monta ponga 28pg en vez de 25 que son las que deberían
 useEffect(() => {
     if(pagActual!==1){
         setCardPorPag(10)
     }
     else if(pagActual===1){
         setCardPorPag(9)
-    }
+}
     
 }, [pagActual,cardsPorPag])
+
 
 useEffect (()=> {
     dispatch(getAllCountry())

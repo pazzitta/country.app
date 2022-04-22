@@ -41,6 +41,13 @@ const rootReducer = (state=initialState, action) => {
                 ...state,
                 activities: action.payload
             }
+        case FILTER_BY_REGION:
+            const countries = state.allCountries;
+            let filteredCs = action.payload === 'AllCont'? countries : countries.filter(c => c.region === action.payload);
+            return {
+                ...state,
+                countries: filteredCs
+            };    
         case ORDER_BY_NAME_AZ:
                 // let sortRace = state.races 
         let resultsAZ = state.allCountries.sort(function(a, b){
@@ -48,6 +55,7 @@ const rootReducer = (state=initialState, action) => {
                     if (a.name < b.name) return -1;
                     return 0;
             });
+            console.log(resultsAZ)
             return {
                 ...state,
                 countries: resultsAZ
@@ -77,7 +85,6 @@ const rootReducer = (state=initialState, action) => {
                 countries: sortPopMax
          };
             default: return {...state}
-
     }
 }
 

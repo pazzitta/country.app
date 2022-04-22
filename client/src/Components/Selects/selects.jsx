@@ -17,18 +17,23 @@ const [orden, setOrden] = useState ('');
 
 function handleSortName(e){ 
     if(e.target.value === "Asc"){
-       e.preventDefault ();
-       dispatch (orderByNameAZ(e.target.value));
-       setPage (1);
-       setOrden (`Ordenado ${e.target.value}`)
+    //    e.preventDefault ();
+       dispatch(orderByNameAZ(e.target.value));
+    //    setPage (1);
+    //    setOrden (`Ordenado ${e.target.value}`)
    }else if(e.target.value === "Desc"){
-       e.preventDefault ();
+    //    e.preventDefault ();
        dispatch (orderByNameZA(e.target.value));
-       setPage (1);
-       setOrden (`Ordenado ${e.target.value}`)
+    //    setPage (1);
+    //    setOrden (`Ordenado ${e.target.value}`)
    }else{
        
    }
+}
+
+function handleRegion (e) {
+    e.preventDefault()
+    dispatch (filterByRegion(e.target.value))
 }
 
 function handleSortPopulation(e){
@@ -47,6 +52,11 @@ function handleSortPopulation(e){
      }
     }
 
+    function handleClickRes (e) {
+        e.preventDefault()
+        dispatch(getAllCountry())
+    }
+
     useEffect (() => {
         dispatch(getActivities())
     }, [dispatch])
@@ -55,7 +65,7 @@ function handleSortPopulation(e){
     
     <div className="ordenTodos">
         
-       <button className="botonReset">Reset</button>
+       <button className="botonReset" onClick={handleClickRes}>Reset</button>
 
        <select className="selectAct">
            <option>Filtar por actividad</option>
@@ -65,13 +75,13 @@ function handleSortPopulation(e){
        </select> 
        
        {/* Ver de cambiar a castellano las opciones  */}
-       <select className="selectCont">
-           <option>Filtar por continente</option>
-           <option>Africa</option>
-           <option>Americas</option>
-           <option>Asia</option>
-           <option>Europe</option>
-           <option>Oceania</option>
+       <select onChange={handleRegion} className="selectCont">
+           <option value="AllCont">Filtar por continente</option>
+           <option value="Africa">Africa</option>
+           <option value="Americas">Americas</option>
+           <option value="Asia">Asia</option>
+           <option value="Europe">Europe</option>
+           <option value="Oceania">Oceania</option>
        </select>
 
        <select onChange={handleSortName} className="selectAlfab">

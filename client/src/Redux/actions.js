@@ -25,7 +25,7 @@ export const getAllCountry = () => async dispatch => {
        .catch(e=> console.log(e))       
 }
 
-// NO ENTRA EL CATCH
+// NO ENTRA EL CATCH No esta funcionando bien mi ruta del back no muestra el "else" de mi ruta donde deberí traer todas los contryes si no encuentra el nombre
 export const searchByName = (payload) => async dispatch => {
     return await fetch( `${RUTA_GET_COUNTRY}/?name=${payload}`)
     .then(respose => respose.json())
@@ -55,6 +55,7 @@ export const filterByRegion = (payload) => {
 }
 
 export const orderByNameAZ = (payload) => {
+    console.log(payload)
     return {
         type: ORDER_BY_NAME_AZ,
         payload
