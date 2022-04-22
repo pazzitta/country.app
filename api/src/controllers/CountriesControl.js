@@ -46,7 +46,7 @@ const getAllAndByName = async (req, res, next) => {
  
 }
  
-//ANDA TODO - VER MÁS TEORÍA A MEDIDA QUE PASAN LOS DÍAS.
+//ANDA TODO - VER MÁS TEORÍA A MEDIDA QUE PASAN LOS DÍAS. CUANDO QUIERE... CUANDO ESTAN LAS ACTIVITIES FALLA. Depende de la del name...
 const getOneById = async (req, res, next) => {
     const {id} = req.params
     try{

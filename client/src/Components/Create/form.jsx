@@ -7,7 +7,8 @@ import {getAllCountry, postActivity} from '../../Redux/actions'
 
 //LAS VALIDACIONES ESTÁN BIEN SALVO 03 YA NO LO TOMA COMO 0... Y LO QUE VA DICIENDO EN EL RESTO DEL DOC...
 //ANDA, PERO CON ALGUNOS PAICES NO... VER QUE ONDA
-//NO ESTRA A LA VALIDACION DEL ELSE IF Y SI BORRO TODOS LOS QUE SELECCIONE ME LO DEJA HACER IGUAL!
+//NO ESTRA A LA VALIDACION DEL ELSE IF Y SI BORRO TODOS LOS QUE SELECCIONE ME LO DEJA HACER IGUAL! Y ME MUESTRA EL CARTEL PORQUE NO 
+//TIENEN UN DELILEY EN CONSOLA. camilo en una clase lo muetra como solucionar.
 //ME GUSTARPIA QUE APAREZCA DE A UNO LOS ERRORES, SI QUEDA TIEMPO HACER ESO.
 //TENES QUE SELECCIONAR MÁS DE UN PAIS...
 export function validate (input) {
@@ -33,7 +34,6 @@ export function validate (input) {
     if (!input.difficulty) {
        errors.difficulty= "Campo requerido, debe selecionar uno únicamente"};
  
- //season ... por ahora solo una. No anda el otoño!
    if (!input.season) {
        errors.season = "Campo requerido, seleccione una estación"
     };
@@ -48,6 +48,8 @@ export default function Form () {
 
 const dispatch = useDispatch();
 const allConutriesSel = useSelector (state => state.countries)
+allConutriesSel.sort((a, b) => a.name.localeCompare(b.name))
+
 const [errors, setErrors] = useState ({})
 
 const [input, setInput] = useState({
@@ -77,7 +79,7 @@ function handleSelectCoun(e) {
     e.preventDefault();
     setInput({
         ...input,
-        countries:[...input.countries, e.target.value]
+        countries:[ e.target.value]
     })
     setErrors (validate ({
         ...input,

@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
     orderByPopulationMin, orderByPopulationMax} from '../../Redux/actions'
 
-// arreglar la posición de los selects, están levemente descentrados
+//FALTA EL SELECT ACTIVITIES Y ARREGLAR LOS OTROS QUE NO ANDAN...
+//TAMBIÉN ME GUSTARIA RESETAR LOS ESTADOS (QUE VUELVA A 0 CUANDO UNO EL RESET)
 export default function Selects () {
 
 const dispatch = useDispatch();
