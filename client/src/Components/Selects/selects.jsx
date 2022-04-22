@@ -37,6 +37,11 @@ function handleRegion (e) {
     dispatch (filterByRegion(e.target.value))
 }
 
+function handleFilActivities (e) {
+    e.preventDefault()
+    dispatch(filterByActivity(e.target.value) )
+}
+
 function handleSortPopulation(e){
     if(e.target.value === "Min"){
         e.preventDefault ();
@@ -68,8 +73,8 @@ function handleSortPopulation(e){
         
        <button className="botonReset" onClick={handleClickRes}>Reset</button>
 
-       <select className="selectAct">
-           <option>Filtar por actividad</option>
+       <select onChange={handleFilActivities} className="selectAct">
+           <option value="None">Filtar por actividad</option>
            {allActivities && allActivities.map (a => ( 
               <option key={a.id} value= {a.name}>{a.name}</option> 
            ))}

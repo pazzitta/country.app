@@ -6,6 +6,7 @@ const initialState = {
    allCountries : [],
    activities: [],
    countDetail: {},
+   countFil : []
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -14,7 +15,8 @@ const rootReducer = (state=initialState, action) => {
             return {
                 ...state,
                 countries: action.payload,
-                allCountries: action.payload
+                allCountries: action.payload,
+                countFil : action.payload
             };
         case GET_ALL_DETAIL:
             return{
@@ -41,6 +43,17 @@ const rootReducer = (state=initialState, action) => {
                 ...state,
                 activities: action.payload
             }
+        case FILTER_BY_ACTIVITY:
+            const countriesA = state.allCountries
+            let filterA = action.payload === 'None' ? countriesA : countriesA.filter(a => {
+                const activitiesF = a.activities.map (ac => ac.name);
+                return activitiesF.includes(action.payload)
+            }) 
+            console.log(filterA)
+            return{
+                ...state,
+                countries: filterA
+            };
         case FILTER_BY_REGION:
             const countries = state.allCountries;
             let filteredCs = action.payload === 'AllCont'? countries : countries.filter(c => c.region === action.payload);

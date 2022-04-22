@@ -76,10 +76,9 @@ function handleChange(e) {
 }
 
 function handleSelectCoun(e) {
-    e.preventDefault();
     setInput({
         ...input,
-        countries:[ e.target.value]
+        countries: [...input.countries, e.target.value]
     })
     setErrors (validate ({
         ...input,
@@ -152,7 +151,6 @@ useEffect(() => {
                </div>
                <br/>
                
-               {/* ACA CREO QUE LE TENGO QUE PONER ALGO QUE DIAGA DIFICULTAD... */}
                <div className="boxDificultadD">
                <div className="dificultadForm">
                    <input onClick={(e)=>handleChange(e)} key= "1" className="dif1Form" type="radio" name="difficulty" value="1" />

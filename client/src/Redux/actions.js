@@ -41,6 +41,7 @@ export const getActivities = () => async dispatch => {
 }
 
 export const filterByActivity = (payload) => {
+    console.log(payload)
     return {
         type: FILTER_BY_ACTIVITY, 
         payload
