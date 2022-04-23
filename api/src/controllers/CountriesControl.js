@@ -50,31 +50,57 @@ const getAllAndByName = async (req, res, next) => {
 }
  
 //ANDA TODO - VER MÁS TEORÍA A MEDIDA QUE PASAN LOS DÍAS. CUANDO QUIERE... CUANDO ESTAN LAS ACTIVITIES FALLA. Depende de la del name...
+// const getOneById = async (req, res, next) => {
+//     const {id} = req.params
+//     try{
+//         if (id){
+//            let busqueda = await Country.findAll({
+//                 where: {id: id},
+//                 include: {
+//                     model: Activity,
+//                     attributes: ["name", "id", "difficulty", "duration", "season"],
+//                     through: {
+//                         attributes: []
+//                     }
+//                 }
+//             })
+//             // console.log(busqueda)
+//             res.send(busqueda);
+
+//         }
+
+        
+//     }catch (error) {
+//         next(error)
+//     }
+
+// }
 const getOneById = async (req, res, next) => {
+   
     const {id} = req.params
-    try{
-        if (id){
-           let busqueda = await Country.findAll({
-                where: {id: id},
-                include: {
+    try { 
+        const country = await Country.findByPk(id.toUpperCase(),{
+            include: [
+                {
                     model: Activity,
-                    attributes: ["name", "id", "difficulty", "duration", "season"],
+                    attributes:  ["name", "difficulty", "duration", "season"],
                     through: {
-                        attributes: []
+                        attributes: [],
                     }
                 }
-            })
-            // console.log(busqueda)
-            res.send(busqueda);
-
+            ]
+        })
+        if(!country){
+            return res.status(404).send(`No se encontro detalle del id ${id}`)
         }
-
+        res.json(country)
         
     }catch (error) {
         next(error)
     }
 
 }
+
 
 
 module.exports = {

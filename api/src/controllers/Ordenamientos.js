@@ -15,7 +15,7 @@ try {
                 if (a.name < b.name) return 1;
                 return 0
             })  
-            console.log(sortName)
+            // console.log(sortName)
             res.send (sortName)
 }catch (error){
     next(error)
@@ -29,7 +29,7 @@ const sortPopulation = async (req, res, next) =>{
     try {
     const sortPopulation = orden === 'AllP'? allInfoCounP : orden === 'Min' ? allInfoCounP.sort ((a,b)=> a.population - b.population) : 
     allInfoCounP.sort((a,b)=> b.population - a.population)
-    console.log(sortPopulation)
+    // console.log(sortPopulation)
     res.send(sortPopulation)
 
     }catch (error) {

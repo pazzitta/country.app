@@ -14,13 +14,13 @@ console.log(detailActivities)
 const dispatch = useDispatch();
 const {id} = useParams();
 
-useEffect (()=> {
-    dispatch(getAllDetail(id))
-}, [dispatch, id])
+// useEffect (()=> {
+//     dispatch(getAllDetail(id))
+// }, [dispatch, id])
    
 return (
         <div >
-            {detailActivities[0].activities? detailActivities[0].activities.length? detailActivities[0].activities.map (ac =>(
+            {detailActivities.activities? detailActivities.activities.length? detailActivities.activities.map (ac =>(
                 <div key= {ac.id}>
                   <CardActivity name={ac.name} difficulty={ac.difficulty} duration={ac.duration} season={ac.season} />
               </div>

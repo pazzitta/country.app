@@ -7,7 +7,6 @@ import { Link, useParams } from "react-router-dom";
 
 import {getAllDetail} from '../../Redux/actions'
 
-//aca se asocia todo el detalle completo ---conutries y activities (tengo que ver como uno la ruta de datalles y saco las card de casa actividad)
 // hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado... en las activities tambien!!!
 //setea el estado anterior... lo tengo que hacer con la acction y el reducer del detail vacío
 
@@ -25,54 +24,46 @@ useEffect (()=>{
 
     return (
         <div key= {id}>
-            <div className="cajaCardsActDet">
-               <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
-               {/* <CardsActivity/> */}
-               <Link to='/create' id='click'>
-               <button className="newActCreate"></button>
-               </Link>
-               </div>
-
-            {detailCountry.length > 0 ?
+           
             <div className="cajaCountriesDet">
                
                <div className="boxPasaporteDetail">
-                  <div className="nameCounDet">{detailCountry[0].name? detailCountry[0].name :"No se encontró nombre"} </div>
+                  <div className="nameCounDet">{detailCountry.name} </div>
                   
                   <div className="boxImagenDet">
-                     <img className="imagTamDet" src={detailCountry[0].flags? detailCountry[0].flags : "No se encotró imagen"} alt="banderas" />
-                     <div className="idCounDet">{detailCountry[0].id ? detailCountry[0].id : "No se encontró id"} </div>
+                     <img className="imagTamDet" src={detailCountry.flags} alt="banderas" />
+                     <div className="idCounDet">{detailCountry.id} </div>
                   </div>
                
                   <div className="boxInfoCountDet">
 
                     <div>
                         <div className="nameContCounDet">Continente:</div>
-                        <div className="contCounDet">{detailCountry[0].region? detailCountry[0].region : "No se encontó región" } </div>
+                        <div className="contCounDet">{detailCountry.region} </div>
                         <div className="lineaSepDet1" ></div>
                      </div>
 
                      <div>
                         <div className="nameSRCounDet">Subregión:</div>
-                        <div className="sRCounDet">{detailCountry[0].subregion? detailCountry[0].subregion : "No se encontó subregión" } </div>
+                        <div className="sRCounDet">{detailCountry.subregion} </div>
                         <div className="lineaSepDet2" ></div>
                      </div>
 
                      <div>
                         <div className="nameCapCounDet">Capital:</div>
-                        <div className="capCounDet">{detailCountry[0].capital? detailCountry[0].capital : "No se encontró capital"} </div>
+                        <div className="capCounDet">{detailCountry.capital} </div>
                         <div className="lineaSepDet3" ></div>
                      </div>
 
                      <div>
                         <div className="namePobCounDet">Población:</div>
-                        <div className="pobCounDet">{detailCountry[0].population? detailCountry[0].population : "No se encontró población"} </div>
+                        <div className="pobCounDet">{detailCountry.population} </div>
                         <div className="lineaSepDet4" ></div>
                      </div>
 
                      <div>
                         <div className="nameAreCounDet">Área:</div>
-                        <div className="areCounDet">{detailCountry[0].area? detailCountry[0].area : "No se encontró área"} Km2</div>
+                        <div className="areCounDet">{detailCountry.area} Km2</div>
                         <div className="lineaSepDet5" ></div>
                      </div>
                
@@ -80,9 +71,15 @@ useEffect (()=>{
                
                </div> 
             
-            </div> : <p>VOLVER, EL DETALLE NO CARGA...</p>
-            }
+            </div> 
 
+            <div className="cajaCardsActDet">
+               <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
+               <CardsActivity/>
+               <Link to='/create' id='click'>
+               <button className="newActCreate"></button>
+               </Link>
+               </div>
             
             <div>
                 <Link to='/home' id='click'>

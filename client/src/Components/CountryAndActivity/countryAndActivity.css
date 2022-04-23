@@ -44,7 +44,7 @@
 .cajaCardsActDet{
     position: relative;
     left: 850px;
-    top: 100px;
+    bottom: 500px;
     /* background-color: salmon; */
     height: 600px;
     width: 800px;
@@ -67,7 +67,7 @@
 .cajaCountriesDet{
     position: relative;
     left: 50px;
-    bottom: 500px;
+    top: 100px;
     /* background-color: rgb(114, 116, 250); */
     height: 600px;
     width: 800px;
@@ -292,12 +292,13 @@
 
 .nameCardAct {
     position: relative;
-    right: 50px;
+    right: 35px;
     top: 25px;
     color: rgb(42, 42, 42);
     font-style: Trebuchet;
     font-weight: 400;
     font-size: 2rem;
+    line-height : 30px; 
 }
 
 .boxDifCardAct{
