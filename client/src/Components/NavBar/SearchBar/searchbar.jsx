@@ -9,10 +9,12 @@ export default function SearchBar () {
 const dispatch = useDispatch();
 const [name, setName] = useState ('');
 
-function handleChange (e) {
+
+function handleSearcName (e) {
     e.preventDefault()
     setName (e.target.value)
 }
+
 
 function handleSummit (e) {
     e.preventDefault()
@@ -22,10 +24,10 @@ function handleSummit (e) {
     
     return (
     <div>
-        <div className="posicion">
-           <input value={name} className="searchName" placeholder="Buscar por nombre" onChange={handleChange} />
-           <button type='submit' className="botonAvion" onClick={handleSummit} ></button> 
-        </div>
+        <form onSubmit={handleSummit} className="posicion">
+           <input value={name} autoComplete= 'off' className="searchName" placeholder="Buscar por nombre" onChange={handleSearcName} />
+           <button type='submit' className="botonAvion"  ></button> 
+        </form>
        
     </div>
     );
