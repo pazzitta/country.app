@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 //todas las acciónes y los componenetes de estados
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
-    orderByPopulationMin, orderByPopulationMax} from '../../Redux/actions'
+    orderByPopulationMin, orderByPopulationMax, orderByName } from '../../Redux/actions'
 
 //FALTA EL SELECT ACTIVITIES Y ARREGLAR LOS OTROS QUE NO ANDAN...
 //TAMBIÉN ME GUSTARIA RESETAR LOS ESTADOS (QUE VUELVA A 0 CUANDO UNO EL RESET)
@@ -16,21 +16,26 @@ const allActivities = useSelector (state => state.activities);
 const [page, setPage] = useState (1);
 const [orden, setOrden] = useState ('');
 
-function handleSortName(e){ 
-    if(e.target.value === "Asc"){
-       e.preventDefault ();
-       dispatch(orderByNameAZ(e.target.value));
-       setPage (1);
-       setOrden (`Ordenado ${e.target.value}`)
-   }else if(e.target.value === "Desc"){
-       e.preventDefault ();
-       dispatch (orderByNameZA(e.target.value));
-       setPage (1);
-       setOrden (`Ordenado ${e.target.value}`)
-   }else{
+// function handleSortName(e){ 
+//     if(e.target.value === "Asc"){
+//        e.preventDefault ();
+//        dispatch(orderByNameAZ(e.target.value));
+//        setPage (1);
+//        setOrden (`Ordenado ${e.target.value}`)
+//    }else if(e.target.value === "Desc"){
+//        e.preventDefault ();
+//        dispatch (orderByNameZA(e.target.value));
+//        setPage (1);
+//        setOrden (`Ordenado ${e.target.value}`)
+//    }else{
        
-   }
+//    }
+// }
+function handleSortName (e) {
+    e.preventDefault()
+    dispatch (orderByName(e.target.value))
 }
+
 
 function handleRegion (e) {
     e.preventDefault()

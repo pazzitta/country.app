@@ -1,12 +1,11 @@
 import { GET_ALL_COUNTRIES, SEARCH_BY_NAME, FILTER_BY_ACTIVITY, FILTER_BY_REGION, ORDER_BY_NAME_AZ, ORDER_BY_NAME_ZA, ORDER_BY_POPULATION_MIN,
-ORDER_BY_POPULATION_MAX, ORDER_BY_POPULATION, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY, DETAIL_VACIO} from './actions' 
+ORDER_BY_POPULATION_MAX, ORDER_BY_POPULATION, GET_ALL_DETAIL, GET_ACTITIVIIES, POST_ACTIVITY, DETAIL_VACIO, ORDER_BY_NAME} from './actions' 
 
 const initialState = {
    countries : [],
    allCountries : [],
    activities: [],
-   countDetail: {},
-   countFil : []
+   countDetail: {}
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -16,7 +15,6 @@ const rootReducer = (state=initialState, action) => {
                 ...state,
                 countries: action.payload,
                 allCountries: action.payload,
-                countFil : action.payload
             };
         case GET_ALL_DETAIL:
             return{
@@ -62,30 +60,51 @@ const rootReducer = (state=initialState, action) => {
             return {
                 ...state,
                 countries: filteredCs
-            };    
-        case ORDER_BY_NAME_AZ:
-                // let sortRace = state.races 
-        let resultsAZ = state.allCountries.sort(function(a, b){
-                    if (a.name > b.name) return 1;
-                    if (a.name < b.name) return -1;
-                    return 0;
-            });
-            console.log(resultsAZ)
+            };
+        case ORDER_BY_NAME :
             return {
                 ...state,
-                countries: resultsAZ
-            };
-        case ORDER_BY_NAME_ZA:
-            let resultsZA = state.allCountries.sort(function(a, b){
-                    if (a.name > b.name) return -1;
-                    if (a.name < b.name) return 1;
-                    return 0;
-                });
-                console.log(resultsAZ)
-                return {
-                    ...state,
-                    countries: resultsZA
-                };    
+                countries: action.payload
+            }
+        // case ORDER_BY_NAME:
+        //     const stateCountry = state.allCountries
+        //     const sortName = action.payload === 'AllN'? stateCountry : action.payload === 'Asc'? stateCountry.sort((a, b) => {
+        //         if (a.name > b.name) return 1;
+        //         if (a.name < b.name) return -1;
+        //         return 0
+        //     } ) : stateCountry.sort((a, b) => {
+        //         if (a.name > b.name) return -1;
+        //         if (a.name < b.name) return 1;
+        //         return 0
+        //     })  
+        //     console.log(sortName)
+        //     return {
+        //         ...state,
+        //         countFil: sortName
+        //     } 
+        // case ORDER_BY_NAME_AZ:
+        //         // let sortRace = state.races 
+        // let resultsAZ = state.allCountries.sort(function(a, b){
+        //             if (a.name > b.name) return 1;
+        //             if (a.name < b.name) return -1;
+        //             return 0;
+        //     });
+        //     console.log(resultsAZ)
+        //     return {
+        //         ...state,
+        //         countries: resultsAZ
+        //     };
+        // case ORDER_BY_NAME_ZA:
+        //     let resultsZA = state.allCountries.sort(function(a, b){
+        //             if (a.name > b.name) return -1;
+        //             if (a.name < b.name) return 1;
+        //             return 0;
+        //         });
+        //         console.log(resultsAZ)
+        //         return {
+        //             ...state,
+        //             countries: resultsZA
+        //         };    
         case ORDER_BY_POPULATION_MIN:
         let sortPopMin = state.allCountries.sort((a,b)=> a.population - b.population)
         console.log (sortPopMin)    

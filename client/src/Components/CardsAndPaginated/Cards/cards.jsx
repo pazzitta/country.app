@@ -39,6 +39,9 @@ useEffect(() => {
 
 useEffect (()=> {
     dispatch(getAllCountry())
+}, [dispatch])
+
+useEffect (() => {
     dispatch(detailVacio())
 }, [dispatch])
 

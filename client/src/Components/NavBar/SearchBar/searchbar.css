@@ -6,10 +6,10 @@
     width: 400px;
     height: 95px;
 }
-/* lo cambí el rigth para poderlo accionar cuando inspecciono es 20 */
+
 .searchName {
     position: relative;
-    right: 200px;
+    right: 20px;
     top: 20px;
     width: 16vw;
     height: 5.6vh;
@@ -21,10 +21,9 @@
     font-size: 1rem; 
 }
 
-/* lo cambí el left para poderlo accionar cuando inspecciono es 150 */
 .botonAvion {
     position: relative;
-    right: 300px;
+    left: 150px;
     bottom: 37px;
     background-image: url("../../../../public/imagenes/Pagina/boton.search.png");
     background-repeat:no-repeat;
