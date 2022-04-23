@@ -29,9 +29,11 @@ const rootReducer = (state=initialState, action) => {
                 countDetail: {}
             }
         case SEARCH_BY_NAME:
+            let aux = action.payload
+            console.log(aux)
             return {
                 ...state,
-                countries: action.payload
+                countries: aux
             };
         case POST_ACTIVITY:
             return {
@@ -74,11 +76,12 @@ const rootReducer = (state=initialState, action) => {
                 countries: resultsAZ
             };
         case ORDER_BY_NAME_ZA:
-                let resultsZA = state.allCountries.sort(function(a, b){
+            let resultsZA = state.allCountries.sort(function(a, b){
                     if (a.name > b.name) return -1;
                     if (a.name < b.name) return 1;
                     return 0;
                 });
+                console.log(resultsAZ)
                 return {
                     ...state,
                     countries: resultsZA

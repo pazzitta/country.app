@@ -101,7 +101,14 @@ function handleSubmit (e) {
        alert ('Complete todo el formulario')
     }else {
        dispatch (postActivity(input))
-       alert ('Has crado una nueva actividad, felicitaciones')
+       alert('Has crado una nueva actividad, felicitaciones')
+       setInput({
+        name: '',
+        duration: '',
+        difficulty: '',
+        season: '',
+        countries: [],   
+       })
     }
     console.log(input)
 }

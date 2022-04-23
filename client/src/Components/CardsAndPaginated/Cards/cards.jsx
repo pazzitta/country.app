@@ -12,6 +12,7 @@ import { detailVacio } from "../../../Redux/actions";
 export default function CardsAndPag () {
 
 const estadoGlobalCountry = useSelector (state => state.countries)
+console.log(estadoGlobalCountry)
 const dispatch = useDispatch ();
 
 //paginado

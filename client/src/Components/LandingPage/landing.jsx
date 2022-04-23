@@ -13,7 +13,8 @@ export default function LandingPage () {
          <source src={Videofondo} type= "video/mp4" />
          {/* <source src={Videofondo2} type = "video/ogv"/> */}
       </video>
-        <Link to= '/home' id='click'>
+      {/* HAY UN LINK EN EL FONDO DE LA PÁG PROBABLEMENTE SEA ESO LO QUE JODE */}
+        <Link  to= '/home' id='click'> 
         <button className="botonHomeLP"></button>
         </Link>
     </div>

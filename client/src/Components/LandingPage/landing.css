@@ -1,15 +1,14 @@
-.landingCoun {
-    height: 100vh;
-    width: 100vw;    
-    background-image: url("../../../public/imagenes/Pagina/fondo.landing.jpg"); 
-    /* hay que arreglar la imagèn para que coincida con la pantalla  */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+.landingCoun { 
+  /* height: 22vh;
+  width: 9vw; */
+  top: 100px;
+  left: 200px;
+  background-color: blue;
 }
 .botonHomeLP {
     position: relative;
     background-image: url('../../../public/imagenes/Pagina/boton.home.png');
+    /* background-color: blue; */
     background-repeat:no-repeat;
     background-color: transparent;
     height: 22vh;
@@ -17,14 +16,15 @@
     background-size: cover;
     background-position:center;
     border: none;
-    bottom: 25vh;
-    left: 16vw;
+    bottom: 260px;
+    left: 340px;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
    }
 
 .videoLanding {
     position: relative;
     background-color: black;
-    height: 950px;
+    /* height: 900px; */
+    width: 1950px ;
     
 }   

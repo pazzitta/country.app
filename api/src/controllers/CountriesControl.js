@@ -11,34 +11,37 @@ const getAllAndByName = async (req, res, next) => {
             await allInfoNecCountries()
         }
     
-        if(!name){
-            const searchInDb = await Country.findAll({ include: {
-                model: Activity,
-                attributes: {
-                    include: ["name", "id"]
-                },
-                through: {
-                    attributes: []
-                }
+        if(name){
+            const country = await Country.findAll({
+                where : {
+                   name: {
+                       [Op.iLike]: `${name}%`
+                       }
+                   }
+               })
+            if(country.length===0){
+                return res.status(404).send(`No se encontró país con el nombre ${name}`)
             }
-        });
-           return res.send (searchInDb)
-        } else {
-            let database = await Country.findAll({
-                where: {
-                    name: { 
-                        [Op.iLike]: `${name}%`}
-                },
-                include: {
-                    model: Activity,
-                    attributes: ["name"],
-                    through: {
-                        attributes: []
-                    }
-                }
-            })
-           return res.send (database)
+            return res.json(country)
         }
+
+        else{
+
+            
+            const countries = await Country.findAll({
+                include: [
+                    {
+                        model: Activity,
+                        attributes:  ["name", "difficulty", "duration", "season"],
+                        through: {
+                            attributes: [],
+                        }
+                    }
+                ]
+            })
+            return res.json(countries)
+        }       
+    
     }catch (error) {
         next (error)
     }

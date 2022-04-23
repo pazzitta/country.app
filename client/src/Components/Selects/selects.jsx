@@ -18,15 +18,15 @@ const [orden, setOrden] = useState ('');
 
 function handleSortName(e){ 
     if(e.target.value === "Asc"){
-    //    e.preventDefault ();
+       e.preventDefault ();
        dispatch(orderByNameAZ(e.target.value));
-    //    setPage (1);
-    //    setOrden (`Ordenado ${e.target.value}`)
+       setPage (1);
+       setOrden (`Ordenado ${e.target.value}`)
    }else if(e.target.value === "Desc"){
-    //    e.preventDefault ();
+       e.preventDefault ();
        dispatch (orderByNameZA(e.target.value));
-    //    setPage (1);
-    //    setOrden (`Ordenado ${e.target.value}`)
+       setPage (1);
+       setOrden (`Ordenado ${e.target.value}`)
    }else{
        
    }
