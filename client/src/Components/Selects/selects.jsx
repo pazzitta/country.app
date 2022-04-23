@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 //todas las acciónes y los componenetes de estados
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
-    orderByPopulationMin, orderByPopulationMax, orderByName } from '../../Redux/actions'
+    orderByPopulationMin, orderByPopulationMax, orderByName, orderByPopulation } from '../../Redux/actions'
 
 //FALTA EL SELECT ACTIVITIES Y ARREGLAR LOS OTROS QUE NO ANDAN...
 //TAMBIÉN ME GUSTARIA RESETAR LOS ESTADOS (QUE VUELVA A 0 CUANDO UNO EL RESET)
@@ -13,8 +13,8 @@ export default function Selects () {
 const dispatch = useDispatch();
 const allActivities = useSelector (state => state.activities);
 
-const [page, setPage] = useState (1);
-const [orden, setOrden] = useState ('');
+// const [page, setPage] = useState (1);
+// const [orden, setOrden] = useState ('');
 
 // function handleSortName(e){ 
 //     if(e.target.value === "Asc"){
@@ -47,21 +47,25 @@ function handleFilActivities (e) {
     dispatch(filterByActivity(e.target.value) )
 }
 
-function handleSortPopulation(e){
-    if(e.target.value === "Min"){
-        e.preventDefault ();
-        dispatch (orderByPopulationMin(e.target.value));
-        setPage (1);
-        setOrden (`Ordenado ${e.target.value}`)
-    }else if(e.target.value === "Max"){
-        e.preventDefault ();
-        dispatch (orderByPopulationMax(e.target.value));
-        setPage (1);
-        setOrden (`Ordenado ${e.target.value}`)
-    }else{
+// function handleSortPopulation(e){
+//     if(e.target.value === "Min"){
+//         e.preventDefault ();
+//         dispatch (orderByPopulationMin(e.target.value));
+//         setPage (1);
+//         setOrden (`Ordenado ${e.target.value}`)
+//     }else if(e.target.value === "Max"){
+//         e.preventDefault ();
+//         dispatch (orderByPopulationMax(e.target.value));
+//         setPage (1);
+//         setOrden (`Ordenado ${e.target.value}`)
+//     }else{
            
-     }
-    }
+//      }
+//     }
+function handleSortPopulation (e) {
+    e.preventDefault()
+    dispatch(orderByPopulation (e.target.value))
+}
 
     function handleClickRes (e) {
         e.preventDefault()
@@ -95,16 +99,16 @@ function handleSortPopulation(e){
            <option value="Oceania">Oceania</option>
        </select>
 
-       <select onChange={handleSortName} className="selectAlfab">
+       <select onChange={handleSortName} defaultValue='AllN' className="selectAlfab">
           <option key="AllN" value="AllN">Ordenar alfabéticamente</option>
           <option key="Asc" value="Asc">A-Z</option>
           <option key= "Desc" value="Desc">Z-A</option>
        </select>
 
        <select onChange={(e)=>handleSortPopulation(e)} className="selectPobl">
-           <option value="AllP">Ordenar por población</option>
-           <option value="Min" >Min-Max</option>
-           <option value="Max" >Max-Min</option>
+           <option key="AllP" value="AllP">Ordenar por población</option>
+           <option key="Min" value="Min" >Min-Max</option>
+           <option key="Max" value="Max" >Max-Min</option>
        </select>
 
    
