@@ -3,7 +3,7 @@
 .boxCardCoun {
     position: relative;
     bottom: 0vh;
-    background-color:rgb(248, 248, 248);
+    background-color:rgb(255, 255, 255);
     box-shadow : 4px 3px 3px rgba(22, 22, 84, 0.40);
     height: 35vh;
     width: 15vw;
@@ -12,8 +12,14 @@
     text-align: center;
     margin-bottom: 2em;
     margin-left: 2rem ;
-    cursor: url("../../../../public/imagenes/Pagina/cursor.pointer1.png"), pointer
+    cursor: url("../../../../public/imagenes/Pagina/cursor.pointer1.png"), pointer;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
 }
+.boxCardCoun:hover{
+    transform:scale(1.1)
+}
+
 
 .tamFlagsCoun {
     position: relative;
