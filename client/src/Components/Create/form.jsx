@@ -87,7 +87,7 @@ function handleSelectCoun(e) {
       console.log(input)           
 }
 
-// ALGO ANDA MAL, NO ENTRA EN EL ELSE IF
+// ALGO ANDA MAL, NO ENTRA EN EL ELSE IF invertir...
 function handleSubmit (e) {
     e.preventDefault();
     if (Object.values(errors).length > 0) {

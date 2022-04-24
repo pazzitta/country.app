@@ -18,11 +18,14 @@ const dispatch = useDispatch ();
 const [pagActual, setPagActual] = useState(1)
 const [cardsPorPag, setCardPorPag] = useState(9)
 const indiceDeCardsFinal = pagActual * cardsPorPag
+console.log(indiceDeCardsFinal)
 const indiceDeCardsPrinc = indiceDeCardsFinal - cardsPorPag
+console.log(indiceDeCardsPrinc)
 const tarjetasAct = estadoGlobalCountry.slice( indiceDeCardsPrinc,indiceDeCardsFinal)
+console.log(tarjetasAct)
 
 const paginado = (numeroDePag) => {
-    setPagActual(numeroDePag)
+     setPagActual( numeroDePag)
 }
 // esto hace que como divide por 9 cuando el componente se monta ponga 28pg en vez de 25 que son las que deberían
 useEffect(() => {
@@ -36,6 +39,7 @@ useEffect(() => {
 }, [pagActual,cardsPorPag])
 
 
+
 useEffect (()=> {
     dispatch(getAllCountry())
 }, [dispatch])
@@ -43,6 +47,10 @@ useEffect (()=> {
 useEffect (() => {
     dispatch(detailVacio())
 }, [dispatch])
+
+useEffect (()=> {
+    paginado (1)
+},[estadoGlobalCountry])
 
     return (
         <div>
@@ -56,8 +64,10 @@ useEffect (() => {
                 </div>
             )})
         }        
+        </div>
+        <div>
+        <Paginated cardsPorPag={cardsPorPag}  estadoGlobalCountry= {estadoGlobalCountry.length} paginado = {paginado} />
         </div>    
-        <Paginated cardsPorPag={cardsPorPag}  estadoGlobalCountry= {estadoGlobalCountry.length} paginado = {paginado}/>
        </div>
     );
 }

@@ -2,10 +2,18 @@ import React from "react";
 import '../Cards/cardsAndPaginated.css';
 
 
-export default function Paginated ({cardsPorPag, estadoGlobalCountry, paginado}) {
+export default function Paginated ({cardsPorPag, estadoGlobalCountry, paginado, pagActual}) {
     const numeroDePag =[];
-    for (let i = 1; i <= Math.ceil(estadoGlobalCountry/cardsPorPag); i++) {
-        numeroDePag.push(i);
+    
+    if (pagActual !== 1) {
+        for(let i = 1; i<= estadoGlobalCountry/10; i++){
+            numeroDePag.push(i)
+        }
+    }else {
+        for (let i = 1; i <= Math.ceil(estadoGlobalCountry/cardsPorPag); i++) {
+            numeroDePag.push(i);
+            console.log(numeroDePag)
+        }      
     }
     
     return (

@@ -5,7 +5,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import {getAllDetail} from '../../Redux/actions'
+import {getAllDetail, detailVacio} from '../../Redux/actions'
 
 // hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado... en las activities tambien!!!
 //setea el estado anterior... lo tengo que hacer con la acction y el reducer del detail vacío
@@ -21,6 +21,7 @@ const {id} = useParams();
 useEffect (()=>{
     dispatch(getAllDetail(id))
 }, [dispatch, id])
+
 
     return (
         <div key= {id}>

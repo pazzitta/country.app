@@ -2,7 +2,6 @@ import React from "react";
 import './searchbar.css';
 import {useDispatch} from 'react-redux';
 import { useState } from "react";
-//acá hay que importar la acción de búsqueda
 import {searchByName} from '../../../Redux/actions'
 
 export default function SearchBar () {

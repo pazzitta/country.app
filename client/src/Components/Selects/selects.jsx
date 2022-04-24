@@ -1,7 +1,7 @@
 import React from "react";
 import './selects.css';
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 //todas las acciónes y los componenetes de estados
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
     orderByPopulationMin, orderByPopulationMax, orderByName, orderByPopulation } from '../../Redux/actions'
@@ -12,6 +12,8 @@ export default function Selects () {
 
 const dispatch = useDispatch();
 const allActivities = useSelector (state => state.activities);
+
+
 
 // const [page, setPage] = useState (1);
 // const [orden, setOrden] = useState ('');
@@ -67,14 +69,16 @@ function handleSortPopulation (e) {
     dispatch(orderByPopulation (e.target.value))
 }
 
-    function handleClickRes (e) {
-        e.preventDefault()
-        dispatch(getAllCountry())
-    }
+function handleClickRes (e) {
+    e.preventDefault()
+    dispatch(getAllCountry())
+    
+}
 
-    useEffect (() => {
-        dispatch(getActivities())
-    }, [dispatch])
+
+useEffect (() => {
+    dispatch(getActivities())
+}, [dispatch])
 
     return (
     
@@ -83,7 +87,7 @@ function handleSortPopulation (e) {
        <button className="botonReset" onClick={handleClickRes}>Reset</button>
 
        <select onChange={handleFilActivities} className="selectAct">
-           <option value="None">Filtar por actividad</option>
+           <option key="None" value="None">Filtar por actividad</option>
            {allActivities && allActivities.map (a => ( 
               <option key={a.id} value= {a.name}>{a.name}</option> 
            ))}
@@ -91,12 +95,12 @@ function handleSortPopulation (e) {
        
        {/* Ver de cambiar a castellano las opciones  */}
        <select onChange={handleRegion} className="selectCont">
-           <option value="AllCont">Filtar por continente</option>
-           <option value="Africa">Africa</option>
-           <option value="Americas">Americas</option>
-           <option value="Asia">Asia</option>
-           <option value="Europe">Europe</option>
-           <option value="Oceania">Oceania</option>
+           <option key="AllCont" value="AllCont">Filtar por continente</option>
+           <option key="Africa" value="Africa">Africa</option>
+           <option key="Americas" value="Americas">Americas</option>
+           <option key= "Asia" value="Asia">Asia</option>
+           <option key="Europe" value="Europe">Europe</option>
+           <option key= "Oceania" value="Oceania">Oceania</option>
        </select>
 
        <select onChange={handleSortName} defaultValue='AllN' className="selectAlfab">
