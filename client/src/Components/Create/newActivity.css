@@ -4,19 +4,19 @@
  background-image: url('../../../public/imagenes/Pagina/boton.home.png');
  background-repeat:no-repeat;
  background-color: transparent;
- height: 20vh;
- width: 9vw;
+ height: 200px;
+ width: 200px;
  background-size: cover;
  background-position:center;
  border: none;
- bottom: 55vh;
- left: 15vw;
+ bottom: 63vh;
+ left: 17vw;
  cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
 }
 
 .boxBotonCreateD {
     position: relative;
-    bottom: 160px;
+    bottom: 130px;
     left: 960px;
     background-color: rgb(43, 42, 92);
     background-color: transparent;
@@ -46,17 +46,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 75vh;
+    height: 40vw;
     width: 60vw;
-    top: 10vh;
-    left: 18vw;
+    top: 5vh;
+    left: 20vw;
 }
 
 /* Nombre */
 .boxNameD{
     position: relative;
-    top: 182px;
-    left: 515px;
+    top:213px;
+    left: 520px;
     background-color: rgb(43, 42, 92);
     background-color: transparent;
     height: 90px;
@@ -88,8 +88,8 @@
 /* Duración */
 .boxDuracionD{
     position: relative;
-    top: 30px;
-    left: 200px;
+    top: 61px;
+    left: 202px;
     background-color: rgb(158, 147, 25);
     background-color: transparent;
     height: 70px;
@@ -123,7 +123,7 @@
 /* Estaciones */
 .boxEstaciones {
     position: relative;
-    top: 100px;
+    top: 134px;
     left: 120px;
     background-color: rgb(175, 49, 49);
     background-color: transparent;
@@ -182,7 +182,7 @@
 /* Dificultad */
 .boxDificultadD {
     position: relative;
-    bottom: 30px;
+    top: 3px;
     left: 450px;
     background-color: rgb(49, 175, 101);
     background-color: transparent;
@@ -243,7 +243,7 @@
 /* select */
 .boxSelectD {
     position: relative;
-    bottom: 97.9px;
+    bottom: 65px;
     left: 700px;
     background-color: rgb(175, 49, 141);
     background-color: transparent;

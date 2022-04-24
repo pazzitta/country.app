@@ -94,14 +94,14 @@ function handleSelectCoun(e) {
 function handleSubmit (e) {
     e.preventDefault();
     if (Object.values(errors).length > 0) {
-        alert ('Complete la información requerida')    
+        alert ('Complete toda la información requerida')    
     }else if (
         input.name === '' && 
         input.duration === '' &&
         input.difficulty === '' &&
         input.season === '' &&
         !input.countries.length) {
-       alert ('Complete todo el formulario')
+       alert ('No puede creear una nueva actividad si no completa el formulario')
     }else {
        dispatch (postActivity(input))
        alert('Has crado una nueva actividad, felicitaciones')
@@ -122,7 +122,7 @@ function handleDelet (e) {
             ...prevInputDel,
             countries : prevInputDel.countries.filter((c, index) => index !== e)
         }
-        console.log(newInpuDel)
+        // console.log(newInpuDel)
         return newInpuDel
     } )
 }
