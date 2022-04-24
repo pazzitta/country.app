@@ -12,7 +12,6 @@ export default function Paginated ({cardsPorPag, estadoGlobalCountry, paginado, 
     }else {
         for (let i = 1; i <= Math.ceil(estadoGlobalCountry/cardsPorPag); i++) {
             numeroDePag.push(i);
-            console.log(numeroDePag)
         }      
     }
     

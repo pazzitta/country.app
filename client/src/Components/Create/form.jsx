@@ -62,30 +62,33 @@ const [input, setInput] = useState({
 })
 
 function handleChange(e) {
-    // e.preventDefault() porque en los change si prevengoeldefalut no no0 marca los radio?
-    setInput ({
-       ...input,
-      [e.target.name]: e.target.value
-    } )
-    console.log(input)
-    setErrors (validate ({
-      ...input,
-      [e.target.name]: e.target.value
-    }))
-    
-}
+    //e.preventDefault() porque en los change si prevengoeldefalut no no0 marca los radio?
+    setInput ((prevInput) => {
+        const newInput = {
+            ...prevInput,
+            [e.target.name]: e.target.value
+        }
+      console.log(newInput)
+      const validations = validate(newInput);
+      setErrors(validations)
+      return newInput
+});
+
+};
 
 function handleSelectCoun(e) {
-    setInput({
-        ...input,
-        countries: [...input.countries, e.target.value]
-    })
-    setErrors (validate ({
-        ...input,
-        [e.target.name]: e.target.value
-      }))
-      console.log(input)           
-}
+    setInput((prevIputsel) => {
+        const newInputSelect = {
+            ...prevIputsel,
+            countries: [...prevIputsel.countries, e.target.value]
+        }
+        console.log(newInputSelect)
+        const validations = validate(newInputSelect);
+        setErrors(validations)
+        return newInputSelect
+  });
+  
+  };
 
 // ALGO ANDA MAL, NO ENTRA EN EL ELSE IF invertir...
 function handleSubmit (e) {
@@ -114,15 +117,20 @@ function handleSubmit (e) {
 }
 
 function handleDelet (e) {
-    setInput({
-        ...input,
-        countries : input.countries.filter((c, index) => index !== e)
+    setInput( (prevInputDel) => {
+        const newInpuDel = {
+            ...prevInputDel,
+            countries : prevInputDel.countries.filter((c, index) => index !== e)
+        }
+        console.log(newInpuDel)
+        return newInpuDel
     } )
 }
 
 useEffect(() => {
     dispatch(getAllCountry())
  },[dispatch])
+
     
     return (
         <div>    

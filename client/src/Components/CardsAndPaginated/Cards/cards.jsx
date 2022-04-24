@@ -20,7 +20,6 @@ const [cardsPorPag, setCardPorPag] = useState(9)
 const indiceDeCardsFinal = pagActual * cardsPorPag
 console.log(indiceDeCardsFinal)
 const indiceDeCardsPrinc = indiceDeCardsFinal - cardsPorPag
-console.log(indiceDeCardsPrinc)
 const tarjetasAct = estadoGlobalCountry.slice( indiceDeCardsPrinc,indiceDeCardsFinal)
 console.log(tarjetasAct)
 
