@@ -20,7 +20,7 @@ export default function Paginated ({cardsPorPag, estadoGlobalCountry, paginado, 
         <ul className="paginado" >
             {numeroDePag && numeroDePag.map (number => (
                 <li className="nums" key = {number}>
-                    <a onClick={()=> paginado(number)}>{number}</a>
+                    <button className={number === pagActual?"active" :"stnums"}  onClick={()=> paginado(number)}>{number}</button>
                 </li>
             ))}
         </ul>
