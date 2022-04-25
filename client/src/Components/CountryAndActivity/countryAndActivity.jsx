@@ -22,6 +22,9 @@ useEffect (()=>{
     dispatch(getAllDetail(id))
 }, [dispatch, id])
 
+useEffect (() => {
+   return dispatch(detailVacio())
+}, [dispatch])
 
     return (
         <div key= {id}>

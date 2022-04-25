@@ -6,18 +6,15 @@ import { useDispatch, useSelector} from "react-redux"
 import {getAllCountry, postActivity} from '../../Redux/actions'
 
 //LAS VALIDACIONES ESTÁN BIEN SALVO 03 YA NO LO TOMA COMO 0... Y LO QUE VA DICIENDO EN EL RESTO DEL DOC...
-//ANDA, PERO CON ALGUNOS PAICES NO... VER QUE ONDA
 //NO ESTRA A LA VALIDACION DEL ELSE IF Y SI BORRO TODOS LOS QUE SELECCIONE ME LO DEJA HACER IGUAL! Y ME MUESTRA EL CARTEL PORQUE NO 
-//TIENEN UN DELILEY EN CONSOLA. camilo en una clase lo muetra como solucionar.
 //ME GUSTARPIA QUE APAREZCA DE A UNO LOS ERRORES, SI QUEDA TIEMPO HACER ESO.
-//TENES QUE SELECCIONAR MÁS DE UN PAIS...
 export function validate (input) {
     let errors = {};
 //Nombre   
     if (!input.name) {
        errors.name = "Campo requerido"
-    }else if (!/^[A-Z]+[A-Za-z0-9\s]+$/g.test(input.name)) {
-       errors.name= "Ingrese más de una letra ,la primera letra en Mayúscula, solo letras y números"
+    }else if (!/^[A-ZA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g.test(input.name)) {
+       errors.name= "Ingrese solo letras y más de una,la primera debe ser mayúscula"
     }
  //duration
     if (!input.duration) {
@@ -26,8 +23,8 @@ export function validate (input) {
        errors.duration = "Solo numeros enteros"
     }else if (input.duration < 1) {
        errors.duration = "Estamos perzosos hoy?, debe ser mayor a 0"
-    }else if (input.duration > 480) {
-       errors.duration = "Woo sí que tenés energía, no puedes superar los 480 (8h)"
+    }else if (input.duration > 240) {
+       errors.duration = "Woo sí que tenés energía, no puedes superar los 240 (4h)"
     };
  
  //difficulty 
@@ -90,7 +87,6 @@ function handleSelectCoun(e) {
   
   };
 
-// ALGO ANDA MAL, NO ENTRA EN EL ELSE IF invertir...
 function handleSubmit (e) {
     // e.preventDefault();
     if (Object.values(errors).length > 0) {

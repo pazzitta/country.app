@@ -43,9 +43,9 @@ useEffect (()=> {
     dispatch(getAllCountry())
 }, [dispatch])
 
-useEffect (() => {
-    dispatch(detailVacio())
-}, [dispatch])
+// useEffect (() => {
+//     dispatch(detailVacio())
+// }, [dispatch])
 
 useEffect (()=> {
     paginado (1)
