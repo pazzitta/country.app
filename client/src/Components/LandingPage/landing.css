@@ -1,10 +1,16 @@
 .landingCoun { 
   /* height: 22vh;
   width: 9vw; */
-  top: 100px;
+  position: relative;
+  bottom: 100px;
   left: 200px;
-  background-color: blue;
+  /* background-color: blue; */
 }
+/* .cajaLinkLP {
+  position: relative;
+  bottom: 30px;
+  background-color: blue;
+} */
 .botonHomeLP {
     position: relative;
     background-image: url('../../../public/imagenes/Pagina/boton.home.png');
@@ -16,8 +22,8 @@
     background-size: cover;
     background-position:center;
     border: none;
-    bottom: 260px;
-    left: 340px;
+    bottom: 200px;
+    left: 170px;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
    }
 

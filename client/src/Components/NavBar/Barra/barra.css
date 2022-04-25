@@ -1,11 +1,7 @@
 .sinLinea{
     text-decoration: none;
 }
-/* .boxLink {
-    position: relative;
-    width: 25%;
-    height: 10vh;
-} */
+
 .boxAppventura{
     position: relative;
     bottom: 1vh;
@@ -17,8 +13,14 @@
 
 }
 
+.sinlink{
+    width: 18vw;
+    height: 5vw;   
+}
+
 .nameAppventura{
     position: relative;
+    left: 1vw;
     /* background-color: rgb(44, 163, 163); */
     width: 25%;
     height: 10vh;
@@ -27,4 +29,5 @@
     font-style: Trebuchet;
     font-weight: 600;
     font-size: 4rem; 
+    cursor: url('../../../../public/imagenes/Pagina/cursor.pointer1.png') ,pointer;
 }

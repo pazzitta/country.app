@@ -92,7 +92,7 @@ function handleSelectCoun(e) {
 
 // ALGO ANDA MAL, NO ENTRA EN EL ELSE IF invertir...
 function handleSubmit (e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (Object.values(errors).length > 0) {
         alert ('Complete toda la información requerida')    
     }else if (

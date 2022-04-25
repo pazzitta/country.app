@@ -18,10 +18,10 @@ const dispatch = useDispatch ();
 const [pagActual, setPagActual] = useState(1)
 const [cardsPorPag, setCardPorPag] = useState(9)
 const indiceDeCardsFinal = pagActual * cardsPorPag
-console.log(indiceDeCardsFinal)
+// console.log(indiceDeCardsFinal)
 const indiceDeCardsPrinc = indiceDeCardsFinal - cardsPorPag
 const tarjetasAct = estadoGlobalCountry.slice( indiceDeCardsPrinc,indiceDeCardsFinal)
-console.log(tarjetasAct)
+// console.log(tarjetasAct)
 
 const paginado = (numeroDePag) => {
      setPagActual( numeroDePag)

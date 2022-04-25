@@ -1,18 +1,19 @@
 .posicion {
     position: relative;
-    bottom: 105px;
-    left: 1370px;
+    bottom: 5.5vw;
+    left: 72vw;
     /* background-color: blueviolet; */
-    width: 400px;
-    height: 95px;
+    width: 20vw;
+    height: 5vw;
 }
+
 
 .searchName {
     position: relative;
-    right: 20px;
-    top: 20px;
+    right: 1vw;
+    top: 1vw;
     width: 16vw;
-    height: 5.6vh;
+    height: 2.67vw;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     border: none;
@@ -23,8 +24,8 @@
 
 .botonAvion {
     position: relative;
-    left: 160px;
-    bottom: 37px;
+    left: 8.3vw;
+    bottom: 1.8vw;
     background-image: url("../../../../public/imagenes/Pagina/boton.search.png");
     background-repeat:no-repeat;
     background-color: transparent;
@@ -32,6 +33,6 @@
     background-position:center;
     border: none;
     width: 5vw;
-    height: 7vh;
+    height: 3vw;
     cursor: url("../../../../public/imagenes/Pagina/cursor.pointer2.png"), pointer;
 }

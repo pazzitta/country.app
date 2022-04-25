@@ -24,8 +24,8 @@
 .tamFlagsCoun {
     position: relative;
     top: 6.5px;
-    height:145px;
-    width: 285px;
+    height:142px;
+    width: 288px;
     overflow: hidden;
     /* Clip-path: inset(50px 50px 30px 20px); */
     border-top-left-radius: 50%;

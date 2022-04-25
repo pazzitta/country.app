@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import './landing.css';
 import Videofondo from '../../video/prueba3.mp4'
 
@@ -11,12 +11,11 @@ export default function LandingPage () {
     <div >
       <video className="videoLanding"  autoPlay ="autoplay" loop muted>
          <source src={Videofondo} type= "video/mp4" />
-         {/* <source src={Videofondo2} type = "video/ogv"/> */}
       </video>
       {/* HAY UN LINK EN EL FONDO DE LA PÁG PROBABLEMENTE SEA ESO LO QUE JODE */}
-        <Link  to= '/home' id='click'> 
-        <button className="botonHomeLP"></button>
-        </Link>
+          <NavLink className="landingCoun"  to= '/home' id='click'> 
+             <button className="botonHomeLP"></button>
+          </NavLink>
     </div>
   );
 }

@@ -71,10 +71,8 @@ function handleSortPopulation (e) {
 
 function handleClickRes (e) {
     e.preventDefault()
-    dispatch(getAllCountry())
-    
+    dispatch(getAllCountry()) 
 }
-
 
 useEffect (() => {
     dispatch(getActivities())
@@ -103,13 +101,13 @@ useEffect (() => {
            <option key= "Oceania" value="Oceania">Oceania</option>
        </select>
 
-       <select onChange={handleSortName} defaultValue='AllN' className="selectAlfab">
+       <select  onChange={handleSortName}  className="selectAlfab">
           <option key="AllN" value="AllN">Ordenar alfabéticamente</option>
           <option key="Asc" value="Asc">A-Z</option>
           <option key= "Desc" value="Desc">Z-A</option>
        </select>
 
-       <select onChange={(e)=>handleSortPopulation(e)} className="selectPobl">
+       <select  onChange={(e)=>handleSortPopulation(e)} className="selectPobl">
            <option key="AllP" value="AllP">Ordenar por población</option>
            <option key="Min" value="Min" >Min-Max</option>
            <option key="Max" value="Max" >Max-Min</option>

@@ -1,22 +1,17 @@
 import React, { useEffect } from "react";
 import './countryAndActivity.css'
 import CardActivity from "./cardActivity";
-import {getAllDetail} from '../../Redux/actions'
-import { useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
 
 //importar todas las acciones y funciones de estado que necesito... para traer la info y el detalle de las actividaes
 
-export default function CardsActivity (props) {
+export default function CardsActivity () {
 
 const detailActivities = useSelector(state => state.countDetail)
-console.log(detailActivities)    
-const dispatch = useDispatch();
-const {id} = useParams();
+   
+const {id} = useParams(); //VER ESTO BIEN!! PORQUE NO LO USO
 
-// useEffect (()=> {
-//     dispatch(getAllDetail(id))
-// }, [dispatch, id])
    
 return (
         <div >
