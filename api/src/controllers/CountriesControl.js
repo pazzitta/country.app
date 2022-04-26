@@ -2,7 +2,6 @@ const {allInfoNecCountries} = require ('./DataCountries')
 const {Country, Activity} = require ('../db')
 const { Op } = require('sequelize')
 
-//ANDA TODO, pero no inclute solo la info de la rura principal...ver como hacer luego, cuando ande todo
 const getAllAndByName = async (req, res, next) => {     
     const {name} = req.query 
     try {
@@ -22,13 +21,20 @@ const getAllAndByName = async (req, res, next) => {
             if(country.length===0){
                 return res.status(404).send(`No se encontró país con el nombre ${name}`)
             }
-            return res.json(country)
+            const dataNecRP = await country?.map (rpn => {
+                return{
+                    id: rpn.id,
+                    name:rpn.name,
+                    flags: rpn.flags,
+                    region: rpn.region
+                }
+            })
+            return res.json(dataNecRP)
         }
 
-        else{
-
-            
+        else{    
             const countries = await Country.findAll({
+                attributes: ["id", "name", "flags", "region"],
                 include: [
                     {
                         model: Activity,
@@ -39,6 +45,7 @@ const getAllAndByName = async (req, res, next) => {
                     }
                 ]
             })
+
             return res.json(countries)
         }       
     
