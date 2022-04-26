@@ -21,12 +21,12 @@ const indiceDeCardsFinal = pagActual * cardsPorPag
 // console.log(indiceDeCardsFinal)
 const indiceDeCardsPrinc = indiceDeCardsFinal - cardsPorPag
 const tarjetasAct = estadoGlobalCountry.slice( indiceDeCardsPrinc,indiceDeCardsFinal)
-// console.log(tarjetasAct)
+console.log(tarjetasAct)
 
 const paginado = (numeroDePag) => {
      setPagActual( numeroDePag)
 }
-// esto hace que como divide por 9 cuando el componente se monta ponga 28pg en vez de 25 que son las que deberían
+// hay un problema, renderiza 1 página menos... y en los filtros también
 useEffect(() => {
     if(pagActual!==1){
         setCardPorPag(10)

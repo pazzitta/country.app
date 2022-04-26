@@ -56,6 +56,7 @@ const rootReducer = (state=initialState, action) => {
         case FILTER_BY_REGION:
             const countries = state.allCountries;
             let filteredCs = action.payload === 'AllCont'? countries : countries.filter(c => c.region === action.payload);
+            console.log(filteredCs)
             return {
                 ...state,
                 countries: filteredCs 

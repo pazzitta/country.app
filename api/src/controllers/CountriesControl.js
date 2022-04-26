@@ -5,8 +5,8 @@ const { Op } = require('sequelize')
 const getAllAndByName = async (req, res, next) => {     
     const {name} = req.query 
     try {
-        const num_country= await Country.count()
-        if(!num_country){
+        const numCountry= await Country.count()
+        if(!numCountry){
             await allInfoNecCountries()
         }
     
@@ -29,7 +29,7 @@ const getAllAndByName = async (req, res, next) => {
                     region: rpn.region
                 }
             })
-            return res.json(dataNecRP)
+            return res.send(dataNecRP)
         }
 
         else{    
@@ -46,7 +46,7 @@ const getAllAndByName = async (req, res, next) => {
                 ]
             })
 
-            return res.json(countries)
+            return res.send(countries)
         }       
     
     }catch (error) {
@@ -56,32 +56,7 @@ const getAllAndByName = async (req, res, next) => {
  
 }
  
-//ANDA TODO - VER MÁS TEORÍA A MEDIDA QUE PASAN LOS DÍAS. CUANDO QUIERE... CUANDO ESTAN LAS ACTIVITIES FALLA. Depende de la del name...
-// const getOneById = async (req, res, next) => {
-//     const {id} = req.params
-//     try{
-//         if (id){
-//            let busqueda = await Country.findAll({
-//                 where: {id: id},
-//                 include: {
-//                     model: Activity,
-//                     attributes: ["name", "id", "difficulty", "duration", "season"],
-//                     through: {
-//                         attributes: []
-//                     }
-//                 }
-//             })
-//             // console.log(busqueda)
-//             res.send(busqueda);
 
-//         }
-
-        
-//     }catch (error) {
-//         next(error)
-//     }
-
-// }
 const getOneById = async (req, res, next) => {
    
     const {id} = req.params
