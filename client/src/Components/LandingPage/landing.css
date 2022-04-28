@@ -1,21 +1,17 @@
 
 .landingCoun { 
-  /* height: 22vh;
-  width: 9vw; */
   position: relative;
-  bottom: 100px;
+  bottom: 210px;
   left: 200px;
-  /* background-color: blue; */
 }
-/* .cajaLinkLP {
-  position: relative;
-  bottom: 30px;
-  background-color: blue;
-} */
+.cajadivLP {
+  position:relative;
+  /* background-color: blue; */
+  width: 100%;
+}
 .botonHomeLP {
     position: relative;
     background-image: url('../../../public/imagenes/Pagina/boton.home.png');
-    /* background-color: blue; */
     background-repeat:no-repeat;
     background-color: transparent;
     height: 22vh;
@@ -23,15 +19,14 @@
     background-size: cover;
     background-position:center;
     border: none;
-    bottom: 200px;
-    left: 170px;
+    bottom: 110px;
+    left: 140px;
     cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
    }
 
 .videoLanding {
     position: relative;
-    background-color: black;
-    /* height: 900px; */
-    width: 1950px ;
-    
+    bottom: 10px;
+    right: 7px;
+    width: 101%;
 }   
