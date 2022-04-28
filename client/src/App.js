@@ -5,7 +5,6 @@ import HomePage from './Components/Home/home';
 import DetailCountry from './Components/Detail/detail';
 import NewActivity from './Components/Create/newActivity';
 
-// LISTO TODA LA CONFIGURACIÓN DE RUTAS!
 
 function App() {
   return (

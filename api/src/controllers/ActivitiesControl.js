@@ -1,7 +1,6 @@
 const {Activity, Country} = require ('../db')
 
 
-//ANDA! HAY QUE REVISAR TEORÍA PARA ESTÁR SEGURA EN ESTOS TEMAS
 const createActivity = async( req, res) => {
  try{
     const {name, difficulty, duration, season, countries} = req.body 
@@ -24,7 +23,6 @@ const createActivity = async( req, res) => {
  }
 }
 
-//anda!
 const getAllActivities = async (req, res) => {
   try {
     const activities = await Activity.findAll()

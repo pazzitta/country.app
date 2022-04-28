@@ -6,8 +6,7 @@ import { useEffect, useState, useReducer } from "react";
 import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
     orderByPopulationMin, orderByPopulationMax, orderByName, orderByPopulation } from '../../Redux/actions'
 
-//FALTA EL SELECT ACTIVITIES Y ARREGLAR LOS OTROS QUE NO ANDAN...
-//TAMBIÉN ME GUSTARIA RESETAR LOS ESTADOS (QUE VUELVA A 0 CUANDO UNO EL RESET)
+
 export default function Selects () {
 
 const dispatch = useDispatch();

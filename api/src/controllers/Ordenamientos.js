@@ -1,4 +1,4 @@
-const {Country, Activity} = require ('../db')
+const {Country} = require ('../db')
 
 const sortName = async (req, res, next) => {
     const {orden} = req.query

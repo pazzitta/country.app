@@ -51,7 +51,7 @@
 }
 .nameActiDet{
     position: relative;
-    top: 4px;
+    top: 20px;
     left: 100px;
     width: 600px;
     height: 60px;
@@ -60,7 +60,7 @@
     color: rgb(62, 62, 62);
     font-style: Trebuchet;
     font-weight: 600;
-    font-size: 3rem; 
+    font-size: 2.5rem; 
 }
 /* COUNTRIES */
 
