@@ -1,3 +1,13 @@
+
+/* @font-face {
+    font-family: 'Sans serif';
+    src: url('../../../../public/Tipos/aristotelica.text-trial-light.ttf');
+} */
+@font-face {
+    font-family: 'Aristotelica text trial';
+    src: local('aristotelica.text-trial-light.ttf') format('opentype');
+  }
+
 .sinLinea{
     text-decoration: none;
 }
@@ -26,7 +36,7 @@
     height: 10vh;
     border-radius: 20px;
     color: rgb(255, 255, 255);
-    font-style: Trebuchet;
+    font-size: trebuchet; 
     font-weight: 600;
     font-size: 4rem; 
     cursor: url('../../../../public/imagenes/Pagina/cursor.pointer1.png') ,pointer;
