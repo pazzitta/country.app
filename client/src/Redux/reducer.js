@@ -43,8 +43,7 @@ const rootReducer = (state=initialState, action) => {
             }
         case POST_ACTIVITY:
             return {
-                ...state,
-                activities: action.payload
+                ...state
             }
         case FILTER_BY_ACTIVITY:
         const countriesA = state.allCountries
@@ -52,6 +51,7 @@ const rootReducer = (state=initialState, action) => {
                 const activitiesF = a.activities.map (ac => ac.name); 
                 return activitiesF.includes(action.payload) 
             }) 
+            console.log(filterA)
             return{
                 ...state,
                 countries: filterA 

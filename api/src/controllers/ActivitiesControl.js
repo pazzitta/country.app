@@ -26,7 +26,7 @@ const createActivity = async( req, res) => {
 const getAllActivities = async (req, res) => {
   try {
     const activities = await Activity.findAll()
-    res.send (activities)
+    res.json(activities)
 
   }catch (error) {
     console.log('no anda el getAllActivities')

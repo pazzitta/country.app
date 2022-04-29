@@ -3,15 +3,17 @@ import './countryAndActivity.css'
 import CardActivity from "./cardActivity";
 import {useSelector} from "react-redux";
 
+
 export default function CardsActivity () {
 
 const detailActivities = useSelector(state => state.countDetail)
+
    
 return (
         <div >
-            {detailActivities.activities? detailActivities.activities.length? detailActivities.activities.map (ac =>(
-                <div key= {ac.id}>
-                  <CardActivity name={ac.name} difficulty={ac.difficulty} duration={ac.duration} season={ac.season} />
+            {detailActivities.activities? detailActivities.activities.length? detailActivities.activities.map ((ac, i) =>(
+                <div key= {i}>
+                  <CardActivity key={i} name={ac.name} difficulty={ac.difficulty} duration={ac.duration} season={ac.season} />
               </div>
 
             ) ) :<div>

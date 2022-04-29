@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import './newActivity.css';
-import { useHistory} from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux"
 import {getAllCountry, postActivity} from '../../Redux/actions'
 
-//LAS VALIDACIONES ESTÁN BIEN SALVO 03 YA NO LO TOMA COMO 0... Y LO QUE VA DICIENDO EN EL RESTO DEL DOC...
-//NO ESTRA A LA VALIDACION DEL ELSE IF Y SI BORRO TODOS LOS QUE SELECCIONE ME LO DEJA HACER IGUAL! Y ME MUESTRA EL CARTEL PORQUE NO 
-//ME GUSTARPIA QUE APAREZCA DE A UNO LOS ERRORES, SI QUEDA TIEMPO HACER ESO.
 export function validate (input) {
     let errors = {};
 //Nombre   
@@ -59,13 +55,12 @@ const [input, setInput] = useState({
 })
 
 function handleChange(e) {
-    //e.preventDefault() porque en los change si prevengoeldefalut no no0 marca los radio?
+    //e.preventDefault() porque en los change si prevengoeldefalut no no0 marca los radio
     setInput ((prevInput) => {
         const newInput = {
             ...prevInput,
             [e.target.name]: e.target.value
         }
-      console.log(newInput)
       const validations = validate(newInput);
       setErrors(validations)
       return newInput
@@ -79,7 +74,6 @@ function handleSelectCoun(e) {
             ...prevIputsel,
             countries: [...prevIputsel.countries, e.target.value]
         }
-        console.log(newInputSelect)
         const validations = validate(newInputSelect);
         setErrors(validations)
         return newInputSelect
@@ -88,7 +82,7 @@ function handleSelectCoun(e) {
   };
 
 function handleSubmit (e) {
-    // e.preventDefault();
+    e.preventDefault();
     if (Object.values(errors).length > 0) {
         alert ('Complete toda la información requerida')    
     }else if (

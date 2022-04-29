@@ -60,22 +60,18 @@ export const getAllDetail = (payload) => async dispatch => {
 }
 
 export const postActivity = (payload) => {
-    return async (dispatch) => {
+    return async () => {
         try {
             const response = await axios.post(RUTA_POST_ACTIVITY, payload);
-            return dispatch ({type: POST_ACTIVITY, payload: response.data })
+            return response
         }catch (e) {
             console.log(e)
         }
     }
 }
 
-//  export const postActivity = (payload) => async dispatch =>{
-//      return await fetch (RUTA_POST_ACTIVITY, payload={method:'POST', body: JSON.stringify(payload)} )
-//      .then (respose => respose.json())
-//      .then (json => dispatch ({type:POST_ACTIVITY, payload:json}))
-//  }
 export const filterByActivity = (payload) => {
+    console.log(payload)
     return {
         type: FILTER_BY_ACTIVITY, 
         payload

@@ -1,10 +1,10 @@
 import React from "react";
 import './selects.css';
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState, useReducer } from "react";
+import { useEffect } from "react";
 //todas las acciónes y los componenetes de estados
-import {getActivities, filterByActivity, filterByRegion, orderByNameAZ, orderByNameZA,getAllCountry, 
-    orderByPopulationMin, orderByPopulationMax, orderByName, orderByPopulation } from '../../Redux/actions'
+import {getActivities, filterByActivity, filterByRegion,getAllCountry, 
+     orderByName, orderByPopulation } from '../../Redux/actions'
 
 
 export default function Selects () {
@@ -13,25 +13,6 @@ const dispatch = useDispatch();
 const allActivities = useSelector (state => state.activities);
 
 
-
-// const [page, setPage] = useState (1);
-// const [orden, setOrden] = useState ('');
-
-// function handleSortName(e){ 
-//     if(e.target.value === "Asc"){
-//        e.preventDefault ();
-//        dispatch(orderByNameAZ(e.target.value));
-//        setPage (1);
-//        setOrden (`Ordenado ${e.target.value}`)
-//    }else if(e.target.value === "Desc"){
-//        e.preventDefault ();
-//        dispatch (orderByNameZA(e.target.value));
-//        setPage (1);
-//        setOrden (`Ordenado ${e.target.value}`)
-//    }else{
-       
-//    }
-// }
 function handleSortName (e) {
     e.preventDefault()
     dispatch (orderByName(e.target.value))
@@ -48,21 +29,7 @@ function handleFilActivities (e) {
     dispatch(filterByActivity(e.target.value) )
 }
 
-// function handleSortPopulation(e){
-//     if(e.target.value === "Min"){
-//         e.preventDefault ();
-//         dispatch (orderByPopulationMin(e.target.value));
-//         setPage (1);
-//         setOrden (`Ordenado ${e.target.value}`)
-//     }else if(e.target.value === "Max"){
-//         e.preventDefault ();
-//         dispatch (orderByPopulationMax(e.target.value));
-//         setPage (1);
-//         setOrden (`Ordenado ${e.target.value}`)
-//     }else{
-           
-//      }
-//     }
+
 function handleSortPopulation (e) {
     e.preventDefault()
     dispatch(orderByPopulation (e.target.value))
@@ -71,7 +38,7 @@ function handleSortPopulation (e) {
 function handleClickRes (e) {
     e.preventDefault()
     dispatch(getAllCountry()) 
-    // window.location.reload()
+    // window.location.reload()  
 }
 
 useEffect (() => {
@@ -91,7 +58,6 @@ useEffect (() => {
            ))}
        </select> 
        
-       {/* Ver de cambiar a castellano las opciones  */}
        <select onChange={handleRegion} className="selectCont">
            <option key="AllCont" value="AllCont">Filtar por continente</option>
            <option key="Africa" value="Africa">Africa</option>
