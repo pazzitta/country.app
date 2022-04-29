@@ -14,14 +14,10 @@ return (
                   <CardActivity name={ac.name} difficulty={ac.difficulty} duration={ac.duration} season={ac.season} />
               </div>
 
-            ) ) : 
-            <div>
-            <h1>No se encuentran actividades, ¿deseas crear una?</h1>
-            </div> : null
-            }
-           
-               
-                  
+            ) ) :<div>
+                   <h1>No se encuentran actividades, ¿deseas crear una?</h1>
+                </div> : null
+            }                                    
         </div>
     )
 }

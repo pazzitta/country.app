@@ -7,7 +7,6 @@ import { Link, useParams } from "react-router-dom";
 
 import {getAllDetail, detailVacio} from '../../Redux/actions'
 
-// hay momentos que se me pira, no machea el id entonces me trae un objeto vacío en el estado... en las activities tambien!!!
 //setea el estado anterior... lo tengo que hacer con la acction y el reducer del detail vacío
 
 export default function BodyDetail () {
@@ -79,10 +78,10 @@ useEffect (() => {
 
             <div className="cajaCardsActDet">
                <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
-               <CardsActivity/>
-               <Link  to='/create' id='click'>
-               <button className="newActCreate"></button>
-               </Link>
+                  <CardsActivity/>
+                  <Link  to='/create' id='click'>
+                     <button className="newActCreate"></button>
+                  </Link>
                </div>
             
             <div className="vistaLink">
