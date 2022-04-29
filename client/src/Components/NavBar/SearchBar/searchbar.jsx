@@ -9,13 +9,13 @@ const dispatch = useDispatch();
 const [name, setName] = useState ('');
 
 
-function handleSearcName (e) {
+function handleSearchName (e) {
     e.preventDefault()
     setName (e.target.value)
 }
 
 
-function handleSummit (e) {
+function handleSubmit (e) {
     e.preventDefault()
     dispatch(searchByName(name))
     setName('')
@@ -23,8 +23,8 @@ function handleSummit (e) {
     
     return (
     <div>
-        <form onSubmit={handleSummit} className="posicion">
-           <input value={name} autoComplete= 'off' className="searchName" placeholder="Buscar por nombre" onChange={handleSearcName} />
+        <form onSubmit={handleSubmit} className="posicion">
+           <input value={name} type='text' autoComplete= 'off' className="searchName" placeholder="Buscar por nombre" onChange={handleSearchName} />
            <button type='submit' className="botonAvion"  ></button> 
         </form>
        
