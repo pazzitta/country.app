@@ -9,8 +9,8 @@ export default function Card ({name, flags, region, id}) {
     
       <div>
          <div className="boxCardCoun">
+            
             <div className="nameCoun">{name}</div>
-            {/* <br/> */}
 
             <div className="idCoun">{id}</div>
 
@@ -18,7 +18,7 @@ export default function Card ({name, flags, region, id}) {
       
             <img className="tamFlagsCoun" src={flags} alt = "char-img"/>
                
-      </div>
+         </div>
 
       </div>
   );
