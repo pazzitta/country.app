@@ -1,3 +1,12 @@
+.todaLaPant {
+    /* background-color: blue; */
+    height: 800px;
+}
+.vistaLink{
+    position: relative;
+    bottom: 600px;
+    /* background-color: blueviolet; */
+}
 .botonHomeDet{ 
   position: relative;
   background-image: url('../../../public/imagenes/Pagina/boton.home.png');
@@ -8,7 +17,7 @@
  background-size: cover;
   background-position:center;
   border: none;
-  bottom: 65vh;
+  bottom: 0px;
   left: 700px;
   cursor: url("../../../public/imagenes/Pagina/cursor.pointer2.png"),pointer;
 }

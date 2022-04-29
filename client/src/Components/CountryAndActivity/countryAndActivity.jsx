@@ -27,7 +27,7 @@ useEffect (() => {
 }, [dispatch])
 
     return (
-        <div key= {id}>
+        <div key= {id} className="todaLaPant">
            
             <div className="cajaCountriesDet">
                
@@ -80,12 +80,12 @@ useEffect (() => {
             <div className="cajaCardsActDet">
                <div className="nameActiDet">ACTIVIDADES TURÍSTICAS</div>
                <CardsActivity/>
-               <Link to='/create' id='click'>
+               <Link  to='/create' id='click'>
                <button className="newActCreate"></button>
                </Link>
                </div>
             
-            <div>
+            <div className="vistaLink">
                 <Link to='/home' id='click'>
                    <button className="botonHomeDet"></button>
                 </Link>

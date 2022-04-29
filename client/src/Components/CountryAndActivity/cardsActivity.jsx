@@ -1,17 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './countryAndActivity.css'
 import CardActivity from "./cardActivity";
 import {useSelector} from "react-redux";
-import { useParams } from "react-router-dom";
-
-//importar todas las acciones y funciones de estado que necesito... para traer la info y el detalle de las actividaes
 
 export default function CardsActivity () {
 
 const detailActivities = useSelector(state => state.countDetail)
-   
-const {id} = useParams(); //VER ESTO BIEN!! PORQUE NO LO USO
-
    
 return (
         <div >
