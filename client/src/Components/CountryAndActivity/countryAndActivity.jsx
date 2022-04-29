@@ -1,19 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './countryAndActivity.css';
 import CardsActivity from "./cardsActivity";
 import { useDispatch, useSelector} from "react-redux";
-import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-
 import {getAllDetail, detailVacio} from '../../Redux/actions'
 
-//setea el estado anterior... lo tengo que hacer con la acction y el reducer del detail vacío
 
 export default function BodyDetail () {
 
 const dispatch = useDispatch();
 const detailCountry = useSelector (state => state.countDetail)
-console.log(detailCountry)
 
 const {id} = useParams();
 
@@ -29,8 +25,8 @@ useEffect (() => {
         <div key= {id} className="todaLaPant">
            
             <div className="cajaCountriesDet">
-               
                <div className="boxPasaporteDetail">
+                  
                   <div className="nameCounDet">{detailCountry.name} </div>
                   
                   <div className="boxImagenDet">

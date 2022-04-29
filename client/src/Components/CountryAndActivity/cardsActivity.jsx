@@ -15,7 +15,7 @@ return (
               </div>
 
             ) ) :<div>
-                   <h1>No se encuentran actividades, ¿deseas crear una?</h1>
+                   <h1>No se encontraron actividades, ¿deseas crear una?</h1>
                 </div> : null
             }                                    
         </div>
