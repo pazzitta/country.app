@@ -88,7 +88,7 @@
 /* Duración */
 .boxDuracionD{
     position: relative;
-    top: 61px;
+    top: 68px;
     left: 202px;
     background-color: rgb(158, 147, 25);
     background-color: transparent;
@@ -123,7 +123,7 @@
 /* Estaciones */
 .boxEstaciones {
     position: relative;
-    top: 134px;
+    top: 136px;
     left: 120px;
     background-color: rgb(175, 49, 49);
     background-color: transparent;
@@ -182,7 +182,7 @@
 /* Dificultad */
 .boxDificultadD {
     position: relative;
-    top: 3px;
+    top: 10px;
     left: 450px;
     background-color: rgb(49, 175, 101);
     background-color: transparent;
@@ -243,7 +243,7 @@
 /* select */
 .boxSelectD {
     position: relative;
-    bottom: 65px;
+    bottom: 55px;
     left: 700px;
     background-color: rgb(175, 49, 141);
     background-color: transparent;

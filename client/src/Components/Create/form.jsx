@@ -76,6 +76,7 @@ function handleSelectCoun(e) {
         }
         const validations = validate(newInputSelect);
         setErrors(validations)
+        console.log(newInputSelect)
         return newInputSelect
   });
   
@@ -94,7 +95,7 @@ function handleSubmit (e) {
        alert ('No puede creear una nueva actividad si no completa el formulario')
     }else {
        dispatch (postActivity(input))
-       alert('Has crado una nueva actividad, felicitaciones')
+       alert(`Has creado ${input.name}, felicitaciones`)
        setInput({
         name: '',
         duration: '',
@@ -110,9 +111,9 @@ function handleDelet (e) {
     setInput( (prevInputDel) => {
         const newInpuDel = {
             ...prevInputDel,
-            countries : prevInputDel.countries.filter((c, index) => index !== e)
+            countries : input.countries.filter((c => c !== e.target.id))
         }
-        // console.log(newInpuDel)
+        console.log(newInpuDel)
         return newInpuDel
     } )
 }
@@ -138,8 +139,7 @@ useEffect(() => {
                  </div> 
                </div>
                <br/>
-               {/* para desavilitar y habilitar estos hay que usas estados */}
-               {/* ¿cómo hago que estos (radio y checkbox) esten dentro de un "name" en el input y demás? ya que son solo elementos de lectura? */}
+        
                <div className="boxEstaciones" >
                   <div className="estacionesForm">
                      <input onClick={handleChange}  className="estVer" type="radio" name= "season" value ='Verano'/>
@@ -193,10 +193,10 @@ useEffect(() => {
                        <p className="errorCoutSelectD">{errors.countries}</p>
                    )}
                 {input.countries? <div>
-                {input.countries?.map((c, index) => 
+                {input.countries?.map(c => 
                     (<div className="listaCountSelD"  key={c}>
                         <span>{c}</span>
-                        <button className="botonDelet" onClick={()=> handleDelet (index)}>x</button>
+                        <button className="botonDelet" id={c}  onClick={handleDelet}>x</button>
                     </div> 
                             ))}
                 </div> : null  }

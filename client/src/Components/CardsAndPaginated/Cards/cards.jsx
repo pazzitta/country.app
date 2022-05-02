@@ -13,7 +13,7 @@ const estadoCountry = useSelector (state => state.countries)
 const dispatch = useDispatch ();
 
 const [pagActual, setPagActual] = useState(1)
-const [cardsPorPag, setCardPorPag] = useState(9)
+const [cardsPorPag, setCardPorPag] = useState(10)
 const indiceDeCardsFinal = pagActual * cardsPorPag
 const indiceDeCardsPrinc = indiceDeCardsFinal - cardsPorPag
 const tarjetasAct = estadoCountry.slice( indiceDeCardsPrinc,indiceDeCardsFinal)
@@ -23,15 +23,15 @@ const paginado = (numeroDePag) => {
      setPagActual(numeroDePag)
 }
 
-useEffect(() => {
-    if(pagActual!==1){
-        setCardPorPag(10)
-    }
-    else if(pagActual===1){
-        setCardPorPag(9)
-}
+// useEffect(() => {
+//     if(pagActual!==1){
+//         setCardPorPag(10)
+//     }
+//     else if(pagActual===1){
+//         setCardPorPag(9)
+// }
     
-}, [pagActual,cardsPorPag])
+// }, [pagActual,cardsPorPag])
 
 
 

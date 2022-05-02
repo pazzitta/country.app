@@ -37,8 +37,8 @@ function handleSortPopulation (e) {
 
 function handleClickRes (e) {
     e.preventDefault()
-    dispatch(getAllCountry()) 
-    // window.location.reload()  
+    // dispatch(getAllCountry()) 
+    window.location.reload()  
 }
 
 useEffect (() => {
